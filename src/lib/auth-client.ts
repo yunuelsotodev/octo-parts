@@ -5,4 +5,4 @@ export const authClient = createAuthClient({
     plugins: [
         adminClient()
     ]
-})
+});

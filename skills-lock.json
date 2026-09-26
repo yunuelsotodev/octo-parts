@@ -1,11 +1,161 @@
 {
   "version": 1,
   "skills": {
+    "12-factor-app": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/12-factor-app/SKILL.md",
+      "computedHash": "c3920d3761a07709340cfa10964ea85b8ae725de5334cca427c7e9c3717c651a"
+    },
+    "37signals-rails": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/37signals-rails/SKILL.md",
+      "computedHash": "940eafb68b5d64774e476d423651240da5a52642c72062bb01e230c8eabf7725"
+    },
+    "acceptance-pipeline-catalog": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/acceptance-pipeline-catalog/SKILL.md",
+      "computedHash": "447bed4bb6db3af9ed588be6e88d97c64ae89d409fe3149236054949c72a4b6e"
+    },
+    "acceptance-pipeline-feature-design": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/acceptance-pipeline-feature-design/SKILL.md",
+      "computedHash": "52054acb423172a821783abdcd5210dddfbf6822cb80f741da0e0293f698d0c5"
+    },
+    "adversarial-beam": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/adversarial-beam/SKILL.md",
+      "computedHash": "97b57c8adb0f982ae45207a3b11e57b0936eb95c0cf04f12d593efc128985aa3"
+    },
+    "adversarial-ddd": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/adversarial-ddd/SKILL.md",
+      "computedHash": "a5e8c8b38ab3b735efe16171c1a3d699b2b31d06da19b06dc1393f7bb4f0a7b7"
+    },
+    "adversarial-elixir": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/adversarial-elixir/SKILL.md",
+      "computedHash": "1911f4213e1ee4886cdb72b1949f9857de385d9a82bca03f27f69d83b22e4cb5"
+    },
+    "adversarial-ios-design": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/adversarial-ios-design/SKILL.md",
+      "computedHash": "672b0a9802b69b80c0211b86c5b585bc75bddde5f5767fc962a9b1983c7f624d"
+    },
+    "adversarial-phoenix-liveview": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/adversarial-phoenix-liveview/SKILL.md",
+      "computedHash": "346a57b90dc3c85af5c029e4231985de38420f799361bb47fe75e81d767502fd"
+    },
+    "adversarial-python": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/adversarial-python/SKILL.md",
+      "computedHash": "86b76fca26b9034e5f9a9c5f4cc43eef85aa43b0f5d5f9ab627662ac250f5c8b"
+    },
+    "adversarial-reactor": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/adversarial-reactor/SKILL.md",
+      "computedHash": "d4acc007bd4414bf152f796464e02e646e45c88b122d3b1e8ef52d3bec0cfd02"
+    },
+    "adversarial-rust": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/adversarial-rust/SKILL.md",
+      "computedHash": "cde6a9fe3bffe8b1df03822338ae10631df7fae290390adb8175f7021f2e5151"
+    },
+    "adversarial-swift": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/adversarial-swift/SKILL.md",
+      "computedHash": "9908a9496f3fc49a0ae4ad5fb2bd3a890a32d7fb90e56ebd0e1a5d7e594bbd04"
+    },
+    "adversarial-swift-ui": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/adversarial-swift-ui/SKILL.md",
+      "computedHash": "336508604a52dcd2bafe98160d015a9b5a9dff7b52b0b165c87a8afb86792ae4"
+    },
+    "adversarial-tanstack": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/adversarial-tanstack/SKILL.md",
+      "computedHash": "b7fc2d09f7724539ede1d19e304d5cfeb6844da0543cfe3a6b073379f46b76a3"
+    },
+    "adversarial-ts-patterns": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/adversarial-ts-patterns/SKILL.md",
+      "computedHash": "33aebd5ad8c125e941d32e4c867f4b279ba8451679887951c6730a8fb871e182"
+    },
+    "adversarial-zod": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/adversarial-zod/SKILL.md",
+      "computedHash": "b985bd8ba7a9d5c11d58eb8f6ce2f917778b968dee39b6d0c63cb9102a787a5c"
+    },
+    "algorithmic-complexity-review": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/algorithmic-complexity-review/SKILL.md",
+      "computedHash": "41400a61c22ea97ba83ba4019b36b12699f2548f4980e39f0e44512da4bde7dd"
+    },
+    "app-planner": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/app-planner/SKILL.md",
+      "computedHash": "84b90d06a104a006f13c4f49479406dc5fa86a8ae751ca61204fc830cc640bd6"
+    },
+    "ast-grep": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/ast-grep/SKILL.md",
+      "computedHash": "bac52ba6bb91d8efb5be928ae21cf61af2ad91addc04e0a55a943dd2f454aac0"
+    },
+    "ast-grep-typescript-react": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/ast-grep-typescript-react/SKILL.md",
+      "computedHash": "13a3ff23ef55aad42fc684edfe5da57ecab14246f7b54ba6a72a3635444f0dc7"
+    },
+    "audio-voice-recovery": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/audio-voice-recovery/SKILL.md",
+      "computedHash": "9957a8c54781013aa34ff234fb62208292b60e20a72617ed2949e86c229dd566"
+    },
+    "base-ui-migrator": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/base-ui-migrator/SKILL.md",
+      "computedHash": "23ed2dacce520344d78c88ea871814984e8debde632e483d79dba2863ecd5c19"
+    },
+    "better-auth": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/better-auth/SKILL.md",
+      "computedHash": "9c576829a2ad5ff7939ee259e2ad4edd8a06bc5a33e6677927740400da511af9"
+    },
     "better-auth-best-practices": {
       "source": "better-auth/skills",
       "sourceType": "github",
       "skillPath": "better-auth/best-practices/SKILL.md",
       "computedHash": "0c30be0e118c2b7a0c4c57bd9e63bf110c7e420a79ec6ce7997153f3b1e066ee"
+    },
+    "better-auth-scaffold": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/better-auth-scaffold/SKILL.md",
+      "computedHash": "a5b5f88aebddf0d6a9ff96f69beefca9a3708142c65a584523ada5185b82acbf"
     },
     "better-auth-security-best-practices": {
       "source": "better-auth/skills",
@@ -13,11 +163,233 @@
       "skillPath": "security/SKILL.md",
       "computedHash": "7a230edf3a24ce18162cb4379f59b6a19b8d24ca04db530609d0f15cede556dc"
     },
+    "bug-review": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/bug-review/SKILL.md",
+      "computedHash": "1219c9924d72a6388efad98d5dc2dbd1c18ef497e742b087ae72c6e995e3be7b"
+    },
+    "build-mcp-server": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/build-mcp-server/SKILL.md",
+      "computedHash": "27290444325c63039f1c59d33474094b8083ba5ef933d91a9c401581f79ede73"
+    },
+    "chat-apps-ui-sdk": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/chat-apps-ui-sdk/SKILL.md",
+      "computedHash": "bc2a0ac3d4e809db3faeab025b15c1077a86c322909c0cb898921eb9cddbeea2"
+    },
+    "chrome-extension": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/chrome-extension/SKILL.md",
+      "computedHash": "2f07a91e864477d8cbc56b7d337bd1f59ebda12a467a9147840f3f3015c52719"
+    },
+    "chrome-extension-ui": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/chrome-extension-ui/SKILL.md",
+      "computedHash": "8d488f726ba6a96fb4e7b1265ad1b73507293dd6979114b326ccd4872a26cd43"
+    },
+    "clean-architecture": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/clean-architecture/SKILL.md",
+      "computedHash": "b2c7b292831a701fa97907a59e0e39a3760df4a7da75c9fcb1351005bf04b5a8"
+    },
+    "clean-code": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/clean-code/SKILL.md",
+      "computedHash": "8e6463cd93d289c5f79b995871b0ce8afc479e952d29be945c35b91afe0bac8f"
+    },
+    "clean-code-ts-react": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/clean-code-ts-react/SKILL.md",
+      "computedHash": "06576c9c8ac7ead123869f692b745da8c5c541df45c0a59c436b455da85cb07c"
+    },
+    "cli-for-agents": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/cli-for-agents/SKILL.md",
+      "computedHash": "bf25e7f99b465f66568bfa6e06b65e07107cb82adb65554690585354cc2ef080"
+    },
+    "cli-review-runner": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/cli-review-runner/SKILL.md",
+      "computedHash": "10587e0cdf09e8cbebbbfca4c7d9d727e47f2cfea06824f36c5b3c29fca5b002"
+    },
+    "code-distill": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/code-distill/SKILL.md",
+      "computedHash": "3935d8f9cc4f7e896900a992a137692b201f2c1c340677b709a3b08f3c851371"
+    },
+    "code-map-visualization": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/code-map-visualization/SKILL.md",
+      "computedHash": "4be6e945b7e2006a54ff45c094374a371c0ac663e82ef01b1ef13bf3faaceb27"
+    },
+    "code-simplifier": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/code-simplifier/SKILL.md",
+      "computedHash": "7dfff19e37f18397f094b42f9ebd0e1e830f6ee7b5c294fefd7fe6a6d2f7f5ed"
+    },
+    "codebase-comprehension-algorithms": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/codebase-comprehension-algorithms/SKILL.md",
+      "computedHash": "ed738c11040a3395a127163badc07e139be172edb7ab1daf930aa262ea8527dd"
+    },
+    "codemod": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/codemod/SKILL.md",
+      "computedHash": "a40ff2448d99bd7a2762ba83d5a20ed4044f80d271f939897f9cc1fe816104e5"
+    },
+    "codemod-react-pipeline": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/codemod-react-pipeline/SKILL.md",
+      "computedHash": "7af4e29c0fb40a1cdce4329085e559fc0fc879c4e522f135d120053649d68484"
+    },
+    "codex-goals": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/codex-goals/SKILL.md",
+      "computedHash": "1e8079d2ce61c6401b7a6d220a6d37c43bff6bd1ff3c43dc4595568cef15abfa"
+    },
+    "complexity-optimizer": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/complexity-optimizer/SKILL.md",
+      "computedHash": "dd8ad128be5d084372ead92a9541172a41328094dc346f89f95f3db29b413799"
+    },
+    "computer-science-algorithms": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/computer-science-algorithms/SKILL.md",
+      "computedHash": "6e7cd31a8196558cc9ce966b5ad39c6f71231cb984da284145b7a1a29b642bc2"
+    },
     "create-auth": {
       "source": "better-auth/skills",
       "sourceType": "github",
       "skillPath": "better-auth/create-auth/SKILL.md",
       "computedHash": "9a9b498bc144367b8e237233f89def63fb2bd69e8cafe173eaa58fe3a863cdc4"
+    },
+    "datadog-dashboards": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/datadog-dashboards/SKILL.md",
+      "computedHash": "720f81590055cc0fa3ec8fb9f7218dcd1a9bf86f717697df669788cbd8fdb102"
+    },
+    "debug": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/debug/SKILL.md",
+      "computedHash": "e99d96705545aa26170606e1e8462c77418a2a8d0567abe835c8168d4393c43d"
+    },
+    "design-review": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/design-review/SKILL.md",
+      "computedHash": "c3bb7b65ac0e152da746bfcbcb2383c0859c368f16fa78b9b58e210a29a4f0fd"
+    },
+    "design-to-react-algorithms": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/design-to-react-algorithms/SKILL.md",
+      "computedHash": "770409bfe62737c7bf69fee8206c29d859da53c6d6e2bb00f08862ba3a32a3d2"
+    },
+    "deterministic-metric-design": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/deterministic-metric-design/SKILL.md",
+      "computedHash": "310872dd599034370f24b3c937881dce0bd72e669b1b653d9356b9e9b80af96c"
+    },
+    "dev-rfc": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/dev-rfc/SKILL.md",
+      "computedHash": "843f03c7182c17784d0941caab0b4019447e33155e2237d184c3d50daaf25982"
+    },
+    "diagram-quality": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/diagram-quality/SKILL.md",
+      "computedHash": "a27422ac2fb473b98a18eb926fb9a9ab0f70fc1d486f535b2800366b4a736f0a"
+    },
+    "diataxis": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/diataxis/SKILL.md",
+      "computedHash": "10a908f139e174c5e18d7b945d6e7a753271efc64f6aec446ae8f71bc76fbf11"
+    },
+    "django-recommender-search-backend-patterns": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/django-recommender-search-backend-patterns/SKILL.md",
+      "computedHash": "fbf3c7f94240970df0121d855762aba75be65d6f9524063841566479f52aea04"
+    },
+    "dockerfile-optimise": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/dockerfile-optimise/SKILL.md",
+      "computedHash": "25b08618791ccf80931e78ede81d133d92d0272a674becc1e4c8766ce9948482"
+    },
+    "docs-search": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/docs-search/SKILL.md",
+      "computedHash": "66988a4d31cad2a84ca47f6463e63b01ae6a08aaddc2c08766505cac29f15733"
+    },
+    "domain-architect": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/domain-architect/SKILL.md",
+      "computedHash": "2be56a0d33a050bbf6a464f15a13862f8134ad159c56696e8512c203670090b6"
+    },
+    "drizzle-nextjs-postgres": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/drizzle-nextjs-postgres/SKILL.md",
+      "computedHash": "371b2f5e23a829f1016c7a601c800745183423ca4395af7f830a9e8e5703d43d"
+    },
+    "drizzle-sqlite": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/drizzle-sqlite/SKILL.md",
+      "computedHash": "1174a8051b6dcb87e9c5de084fe7c77971f472ff5ea3ba22109c20c66a30ae61"
+    },
+    "drizzle-sqlite-scaffold": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/drizzle-sqlite-scaffold/SKILL.md",
+      "computedHash": "3b343edd7aac03d49d8818bfbcd3c99901f8921378e065a63dbe5b55ede74e66"
+    },
+    "dx-harness": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/dx-harness/SKILL.md",
+      "computedHash": "9fdbe59b54387c55131329ca117e10d0019e506f06901fc6e3078d77156bdca6"
+    },
+    "effect-ts": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/effect-ts/SKILL.md",
+      "computedHash": "2aea9486947f7af350db1be29c5e290b2fdf3d04a0e464b0a5f43e67f25c3807"
+    },
+    "elixir-meta-programming": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/elixir-meta-programming/SKILL.md",
+      "computedHash": "4fb09b9cab28414f198fbe67ce4791916f62a518aeff2adf7df850e66ed61859"
     },
     "email-and-password-best-practices": {
       "source": "better-auth/skills",
@@ -25,17 +397,449 @@
       "skillPath": "better-auth/emailAndPassword/SKILL.md",
       "computedHash": "863886759f729081e265941f4f72c503835d55a1f34f6d63cebe6571159fff4a"
     },
+    "emilkowal-animations": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/emilkowal-animations/SKILL.md",
+      "computedHash": "f9d5fc89ddc9b7b1ce1b323c7152881c3a01d8088ccec5ddfd4c7aebc0c9c936"
+    },
+    "eval-mcp": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/eval-mcp/SKILL.md",
+      "computedHash": "b56c9d444eed06134b7b6ebb9496ce18ed2f79c0abbd48385676aef32ec639f0"
+    },
+    "exec-plan": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/exec-plan/SKILL.md",
+      "computedHash": "3b7dfd5c2e234ee7b4acbb7d2d0441724d462d044415f4ea967d88dfa35b510f"
+    },
+    "expo": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/expo/SKILL.md",
+      "computedHash": "53897c7be29ab7712e692f62cafedde83960c8147b2a7cb03dc82afa37a466a7"
+    },
+    "expo-design-system": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/expo-design-system/SKILL.md",
+      "computedHash": "93c912fe2c019041b61f79918d6e9981b8ec2b94628f67cde44e93b3d27ef137"
+    },
+    "expo-design-system-scaffolder": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/expo-design-system-scaffolder/SKILL.md",
+      "computedHash": "1e8c36127976b93b447fd2425fb753be25ab39ad4f2df0b74009561a9d339572"
+    },
+    "expo-ios-hig": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/expo-ios-hig/SKILL.md",
+      "computedHash": "bd3d3317b4a546ee29edbdd692b4e4364a7aac92979f74fda2f613d9d98c7c28"
+    },
+    "expo-ios-hig-verify": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/expo-ios-hig-verify/SKILL.md",
+      "computedHash": "5e4639994c50085e832b916146ef4f31846a9a2da421061447f1dcc1e183b588"
+    },
+    "expo-ios-screen-scaffolder": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/expo-ios-screen-scaffolder/SKILL.md",
+      "computedHash": "aa32927012239dd4fb0169b0c38babcb05d4ac22bbc11d1421185a7029475872"
+    },
+    "expo-react-native-coder": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/expo-react-native-coder/SKILL.md",
+      "computedHash": "dd487bc4412ab78ade7b12aae1356a78cb710fa178b35e1ef14aec72d53c9b88"
+    },
+    "expo-react-native-performance": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/expo-react-native-performance/SKILL.md",
+      "computedHash": "da6e70dd6c48bd87388d966d8789063041a70928fa824841a3e097e59e924a54"
+    },
+    "expo-ui": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/expo-ui/SKILL.md",
+      "computedHash": "2a37127ed29959d2d36bdd24e803345a5362411c4ef2cf083049ae1e5505d6fd"
+    },
+    "feature-arch": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/feature-arch/SKILL.md",
+      "computedHash": "e4aa406205a7e30a832c410d810316e3456d45d11c8ebd6c39901624c9a0132d"
+    },
+    "feature-arch-gate": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/feature-arch-gate/SKILL.md",
+      "computedHash": "39006215b73ac2c30d88af3aa058b6a0ee73c9ad44aea83dfc63ee7567999e6a"
+    },
+    "feature-spec": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/feature-spec/SKILL.md",
+      "computedHash": "d20904b1f4398176350bd5c176d911a87eec419e754ef7818aaf07dfb3fe4de6"
+    },
+    "fog-of-war-js-ts": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/fog-of-war-js-ts/SKILL.md",
+      "computedHash": "2524935707a11d81c2053d143d60f37be61868aaf639ec323aa90ca715766839"
+    },
+    "framer-motion": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/framer-motion/SKILL.md",
+      "computedHash": "40a05a1671ae7dbba9bf4d483d37927e593a2b4b569a4388d29ce922cc54c2c6"
+    },
+    "geohash-spatial-code-maps": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/geohash-spatial-code-maps/SKILL.md",
+      "computedHash": "ded4d4b1f7b890aa09dff83e04cefba04aa9d3a834b103c2f64c460860088a34"
+    },
+    "go-process-cli": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/go-process-cli/SKILL.md",
+      "computedHash": "97f93f49853202c0a2e241b83f644c58d9fd3c83f85ff3ac4613b5869c02abb5"
+    },
+    "graph-schema": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/graph-schema/SKILL.md",
+      "computedHash": "fd8d5e64c1dbb93fb01219abd8975b92703b0ac45de457e28754619221271420"
+    },
+    "harness-engineering": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/harness-engineering/SKILL.md",
+      "computedHash": "b85380e758e683ac3732835a0fcb5ad97b0a0e6d3d453a5fca4501813987e0c6"
+    },
+    "human-copywrite": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/human-copywrite/SKILL.md",
+      "computedHash": "5a21a49c8742de51f34bf6d0bb6c5f6dbb1fa00dc92a1e94439fb24c4814f825"
+    },
+    "humanize": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/humanize/SKILL.md",
+      "computedHash": "5b8fd377f17091b9e5e2b8574948ccc7c2d2e47867c53707923b2b818b1d96bd"
+    },
+    "implementation-design-patterns": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/implementation-design-patterns/SKILL.md",
+      "computedHash": "672bb681eeb02916b260c1e88ceb1685aa93a3b6b9d015187bfe13b2ff990139"
+    },
+    "implementation-design-patterns-python": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/implementation-design-patterns-python/SKILL.md",
+      "computedHash": "16880d5cb7a639f4034432e70f6e9c16efc7476c48c81e194a86dc47e10e32ae"
+    },
+    "implementation-functional-patterns": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/implementation-functional-patterns/SKILL.md",
+      "computedHash": "b7a09ac372d87854e0970b3cc5c1c3a0e9ea950e02427a8768534b1b671cfcda"
+    },
+    "inngest-nextjs-patterns": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/inngest-nextjs-patterns/SKILL.md",
+      "computedHash": "e7c79656c90b305c36d7b72c3778c1de616bfdfc04128e9085797b8fd9107a31"
+    },
+    "io-bound-data-processing": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/io-bound-data-processing/SKILL.md",
+      "computedHash": "86747ae28134b0ec27d8f0a2ced2c2cf1ba6d7bbe12587f8dfcde39567f6efce"
+    },
+    "ios-animations": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/ios-animations/SKILL.md",
+      "computedHash": "e9db3de6263a9f0aaeae248c89b1081d70e778e40fc1105e9af9ccb4398f04e3"
+    },
+    "ios-chaos-monkey": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/ios-chaos-monkey/SKILL.md",
+      "computedHash": "e532d8d90244aaf145cfb29760d19246f8368225fc9885b06a2511202b48331c"
+    },
+    "ios-design": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/ios-design/SKILL.md",
+      "computedHash": "cabf22363f6b98df5e466e71ef772d65d404803077a2773704e03b4404a73b2a"
+    },
+    "ios-design-system": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/ios-design-system/SKILL.md",
+      "computedHash": "d1ea5b022366efe09471a5fc92fd7d62a979ba5eba4b422d43c8b1c6a1f98549"
+    },
+    "ios-hig": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/ios-hig/SKILL.md",
+      "computedHash": "185b4768d44b119431054014b3eb91b18ecbc4b03b3fd30d52da38ab8261693a"
+    },
+    "ios-navigation": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/ios-navigation/SKILL.md",
+      "computedHash": "6349704486c69f301f9e6f75010c982484527a2f81823ccd1625d23689fe5a65"
+    },
+    "ios-storyboard": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/ios-storyboard/SKILL.md",
+      "computedHash": "a39cd7028ee0b6cd788bef3c179f448ce36b9e4a58e10548a2eb7512818aa494"
+    },
+    "ios-taste": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/ios-taste/SKILL.md",
+      "computedHash": "dcf373ece605dcf6f8279d99250681394c815a3330d6c9e8c7061e489c2aeae3"
+    },
+    "ios-testing": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/ios-testing/SKILL.md",
+      "computedHash": "80126afd831689296462fc1f566a79a7f30a2daf559ce25cfa74c49081322ffd"
+    },
+    "ios-ui-refactor": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/ios-ui-refactor/SKILL.md",
+      "computedHash": "d16ae56264613cab3fb047ef8375391d6faebe6c099a2dceeca8fe9f07f485a7"
+    },
+    "ios-xcode": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/ios-xcode/SKILL.md",
+      "computedHash": "a34c8cbe81ffd72cf955d95ee39c9ad40e385acaf021bb6c8a090d826ac92f6e"
+    },
+    "js-google": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/js-google/SKILL.md",
+      "computedHash": "383c63b7d1c1d868ed875d86948a1de6447f26cb96ddec095e7f283ec8a27a17"
+    },
+    "jscodeshift": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/jscodeshift/SKILL.md",
+      "computedHash": "7e3ae34f48fd8442d666096a8ab7aa59a4c08a3378c4e02358ddfce0fbc5bcbf"
+    },
+    "knip-deadcode": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/knip-deadcode/SKILL.md",
+      "computedHash": "09879fec7939329934ef2fc383a8d734b53e6500e8d7f5fd7fdad03becd51ad8"
+    },
+    "language-spec-author": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/language-spec-author/SKILL.md",
+      "computedHash": "0e531f2bedb3394e9ec3536335e923128cf5204d4be2a8bf68bf959a7b6d3394"
+    },
+    "library-reference-distillation": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/library-reference-distillation/SKILL.md",
+      "computedHash": "6d99ad7deace679cb0fbdd93287fd22b35d9d48171efea35d2324a5b149fcf85"
+    },
+    "linguistic-semantic-algorithms": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/linguistic-semantic-algorithms/SKILL.md",
+      "computedHash": "d44ec512b327f3eeecdc3ab7ca60c989d94c768b0f283bfeeb917e3db40090ea"
+    },
+    "marketplace-personalisation": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/marketplace-personalisation/SKILL.md",
+      "computedHash": "eeb2aa5e411ca8791a37b6e64c10fc6319c7408c994e3de8f00c644a7744bca8"
+    },
+    "marketplace-pre-member-personalisation": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/marketplace-pre-member-personalisation/SKILL.md",
+      "computedHash": "0270185299a13d0bdeaf6984afe58d0e5584ee4aa5ca49a10e23a8165208c55a"
+    },
+    "marketplace-recsys-feature-engineering": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/marketplace-recsys-feature-engineering/SKILL.md",
+      "computedHash": "08b65616c87239050ddc5d757e6778e320f08d7a352725daa8b2e542ef8d0be8"
+    },
+    "marketplace-search-recsys-planning": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/marketplace-search-recsys-planning/SKILL.md",
+      "computedHash": "aace83cb091f6b570c66aee6fd6a9f5c5bd347fcdbae4fae0f6d2a5e077a39bd"
+    },
+    "metric-validation-harness": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/metric-validation-harness/SKILL.md",
+      "computedHash": "6c506e38551a885ff9a2a870e8688a8686860a2c68eb3bea95d2a80eda9e91da"
+    },
+    "migrate-js-to-modern-typescript": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/migrate-js-to-modern-typescript/SKILL.md",
+      "computedHash": "65b6b78a3795625ee70c2d3666cf41f9bc895940b240dbd2172a0dd6cdb03794"
+    },
     "migrate-radix-to-base": {
       "source": "shadcn-ui/ui",
       "sourceType": "github",
       "skillPath": "skills/migrate-radix-to-base/SKILL.md",
       "computedHash": "e1f2030ee5059be3dff0812ca0e4b995ee9fa3132176f049ebe6c90346a6755e"
     },
+    "mlflow-3": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/mlflow-3/SKILL.md",
+      "computedHash": "752fbed230e3b638abded60a4bf00b27519529a1f51476b01537b39df3c726eb"
+    },
+    "mlflow-mlops-migration": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/mlflow-mlops-migration/SKILL.md",
+      "computedHash": "ad9058dd9cfe66fb4f7b3cd1985144f5f1d36ffd2efce6f03ea4b18d5eb449c6"
+    },
+    "msw": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/msw/SKILL.md",
+      "computedHash": "2a8ef7934bbda4992bd1ee44e521922768e55ae7134dfc668efd5cf88bfe4b40"
+    },
+    "mui-base": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/mui-base/SKILL.md",
+      "computedHash": "d83296f3b8870417f74de3c63c163508decee3bbb6270a1e251e5bad90f76900"
+    },
+    "nextjs": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/nextjs/SKILL.md",
+      "computedHash": "870064c2c1098e06a812b63663c7404c533618d2f33896fe5f028f6a4cbc4cfb"
+    },
+    "nextjs-bundle-optimizer": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/nextjs-bundle-optimizer/SKILL.md",
+      "computedHash": "2a87dd54d3a6156b4bd665137bb54443de91c7ed614c81e7e042c596aacaaaa4"
+    },
+    "nextjs-ppr-patterns": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/nextjs-ppr-patterns/SKILL.md",
+      "computedHash": "5deeb5c4a791b3a2c7235de90800cac8179a155bbd264404dacddbb65621b8c4"
+    },
+    "nginx-c-module-debug": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/nginx-c-module-debug/SKILL.md",
+      "computedHash": "cf635615c0c4d4be3a38110cc0f8999959a9ae36efa3fff27baaa6d4df672fcd"
+    },
+    "nginx-c-module-design": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/nginx-c-module-design/SKILL.md",
+      "computedHash": "ce7fcd9bea2f02a737a8b208f7b64395ab4f6caa47fb567ddbd273e9279ba112"
+    },
+    "nginx-c-module-perf": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/nginx-c-module-perf/SKILL.md",
+      "computedHash": "297803200d0029d80f315198129687123f0da2ae39e4ea34634fc16a261d31aa"
+    },
+    "nginx-c-modules": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/nginx-c-modules/SKILL.md",
+      "computedHash": "83187feb4c729dc91a5909d002ba4811cf9a317f5b82885a90570a5fb7d95181"
+    },
+    "nuqs": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/nuqs/SKILL.md",
+      "computedHash": "5811f3b4c6f981aa75647ffb879d6e98429535ff830df219a04f4c9a884658a6"
+    },
+    "nuqs-codemod-runner": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/nuqs-codemod-runner/SKILL.md",
+      "computedHash": "b411a2b8352c869bf40c5c91406a7d2cfef12dc2b705b5011f749671b828a164"
+    },
+    "nuqs-scaffolder": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/nuqs-scaffolder/SKILL.md",
+      "computedHash": "de986acd758a87621a2d25d7af86fb4c7000084586568086964b48159425bf35"
+    },
+    "openai-codex-rust-patterns": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/openai-codex-rust-patterns/SKILL.md",
+      "computedHash": "2a68b40d3881a35a80e741923b2bc7536bee4a090d6e1f5b556f3c479ed50f43"
+    },
+    "opencode-ts": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/opencode-ts/SKILL.md",
+      "computedHash": "251861420771daeb78109f1b13dd493057ea58be4a7c3bf46a99f8f808adee21"
+    },
+    "opensearch-function-scoring-algorithms": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/opensearch-function-scoring-algorithms/SKILL.md",
+      "computedHash": "7cd8621e216fdd67e7a8cb7099bb1cad7720de6307e34eb7fcc3c94b73d5b5c6"
+    },
+    "opensearch-personalize-caching-strategies": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/opensearch-personalize-caching-strategies/SKILL.md",
+      "computedHash": "53c54f0cb98edc909725afe18beebed92b176ced12ec8612a785aa6c37eb19b0"
+    },
+    "opinionated-nextjs-patterns": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/opinionated-nextjs-patterns/SKILL.md",
+      "computedHash": "cb66a57bc80390cc078cbf46b2b221cafdbbe359ef6a17663b2eb3efbcd14eba"
+    },
     "organization-best-practices": {
       "source": "better-auth/skills",
       "sourceType": "github",
       "skillPath": "better-auth/organization/SKILL.md",
       "computedHash": "8c85e683dabef4532f1e8b67bbed5c453d39e0e3d5aeedd69d16b568f6e6d44f"
+    },
+    "orval": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/orval/SKILL.md",
+      "computedHash": "db1985add95110ccba5b736ebfb7910b6ada3f68ae80b61bf2ce03d8043671c3"
+    },
+    "playwright": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/playwright/SKILL.md",
+      "computedHash": "8cdd6a79c7ee4184e9ed88c78fd8c4e1cb94807010871273c9747d07bcc745f2"
     },
     "prisma-cli": {
       "source": "prisma/skills",
@@ -91,17 +895,461 @@
       "skillPath": "prisma-upgrade-v7/SKILL.md",
       "computedHash": "0e07dc2831f86cf27627df914db43d862b0fc75d72c1f9070434aab7940bad7c"
     },
-    "shadcn": {
-      "source": "shadcn-ui/ui",
+    "pt-irs-runbook": {
+      "source": "pproenca/dot-skills",
       "sourceType": "github",
-      "skillPath": "skills/shadcn/SKILL.md",
-      "computedHash": "f615de216e085a84e31593ad0fa9062232adc40cd87b7c7ab2b8e49abf6500be"
+      "skillPath": "skills/.experimental/pt-irs-runbook/SKILL.md",
+      "computedHash": "fc1abf329092ebad7102e5bbd4fdc8498188a33c246e6993c85eca209773d119"
+    },
+    "pulumi": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/pulumi/SKILL.md",
+      "computedHash": "6f9c1fb6a76b4d034e28e75a1089abd63a4a690333b5174e32f34b1d14484f01"
+    },
+    "python": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/python/SKILL.md",
+      "computedHash": "067e772ca728efbbdab67e375cf3c32cf6c31e76df7cebea1430890b00e9f925"
+    },
+    "python-pep-author": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/python-pep-author/SKILL.md",
+      "computedHash": "56bd6bdc5a6c339f1b1f70fd89a8ccfdfd61b5faf4261fa3cb0d8b23c27c9359"
+    },
+    "radical-simplification": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/radical-simplification/SKILL.md",
+      "computedHash": "edef2ee67498c81fcdc6ca62718ff5be9be51b5568346bb300ee840847ed14d8"
+    },
+    "rails-application-ui-blocks": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/rails-application-ui-blocks/SKILL.md",
+      "computedHash": "52187478eb98be120eda690a1c6e98e275dd26f2594767f667565da9ee6c1a22"
+    },
+    "rails-design-system": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/rails-design-system/SKILL.md",
+      "computedHash": "93fc9dd4ae29269d0804f8163d09480d6e82715b7733d688713aa0cc989c8d13"
+    },
+    "rails-dev": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/rails-dev/SKILL.md",
+      "computedHash": "5c1487bc4ff77a36b02e52ae52aee17b28b353454c5e405cb0f4dcccf6c0ad7c"
+    },
+    "rails-hotwire": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/rails-hotwire/SKILL.md",
+      "computedHash": "6731d0ea6d6c986e89a9561faf1ee3e086520dacaabe48aae6119afe890f8b49"
+    },
+    "rails-testing": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/rails-testing/SKILL.md",
+      "computedHash": "eadb662ff810bcd586e3f8669fd25b3fb7411f10703622f4d46238f2c8773897"
+    },
+    "ray": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/ray/SKILL.md",
+      "computedHash": "df4630537dbad85a5e6cd41ddde154629ea5f9e78a0643a81d83deb813f1ce1e"
+    },
+    "ray-llm": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/ray-llm/SKILL.md",
+      "computedHash": "66930b6cbf6abcedc55e2916f99b5843c61c533c84facb59ff5565707d9851a2"
+    },
+    "react": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/react/SKILL.md",
+      "computedHash": "970c793b20753c3628c9bb17a0d0c2841ec8f11d745a97d6ab586f6dba048596"
+    },
+    "react-19-component-scaffolder": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/react-19-component-scaffolder/SKILL.md",
+      "computedHash": "39ca508cd872bade72938e34c7ca261c6c8b384b56d758873fc4e6d7d7271dbf"
+    },
+    "react-fetch-cache-patterns": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/react-fetch-cache-patterns/SKILL.md",
+      "computedHash": "661dcd058681bb25a71579d455975810576b69024faae1c4b5e591ec5d05f5a2"
+    },
+    "react-hook-form": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/react-hook-form/SKILL.md",
+      "computedHash": "e9881245bb3f993f93c9fce336ca7a517ce39864aa46c95d04238fc5ebc4e4d1"
+    },
+    "react-hook-form-audit": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/react-hook-form-audit/SKILL.md",
+      "computedHash": "78fb755a2d182a951c76cdf7c6c73a3e4cbd7dba31370aa25c32e55eaf22cc63"
+    },
+    "react-native-elements": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/react-native-elements/SKILL.md",
+      "computedHash": "a6708e5266e751da976b4fdb7fa7193e74955f44070b259da43a62f1717b4c74"
+    },
+    "react-optimise": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/react-optimise/SKILL.md",
+      "computedHash": "ffd008b9f31806f67875bc4a4edec0ad6d5d19b289aaee177c350e2f73b2d2d6"
+    },
+    "react-refactor": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/react-refactor/SKILL.md",
+      "computedHash": "572da15279d95a77082279529edf893bb60eace6cbc6b20fa2f32c6bc7124524"
+    },
+    "react-testing-library": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/react-testing-library/SKILL.md",
+      "computedHash": "f5aa250de3181d75f34945936dce277811288feac799198d28ef0ff91ef54d42"
+    },
+    "refactor": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/refactor/SKILL.md",
+      "computedHash": "f37e6c1008a49415f2577fd9ab049c94354cab6c8eb8a6ff4475f07aeedbfbe1"
+    },
+    "relational-data-modeling": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/relational-data-modeling/SKILL.md",
+      "computedHash": "e05013c823714a4e8fdb1e0fb1b0cc58d5103990560b7abfcaf4af3e2eb46bc0"
+    },
+    "relational-database-design": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/relational-database-design/SKILL.md",
+      "computedHash": "52803c72609ab57f7ae3cf464c6fa7dc299d20755f97b92e59cd9f1ec5506658"
+    },
+    "restful-hateoas": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/restful-hateoas/SKILL.md",
+      "computedHash": "9eb155d4f3fed283cb40cb691670faeb8348b3641288ed00d7fc9835d132e336"
+    },
+    "ruby-optimise": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/ruby-optimise/SKILL.md",
+      "computedHash": "9b6f45d217dc36f37be15fd0dc1cdd507101ebf50f6cb9c2e708929f166fd77e"
+    },
+    "ruby-refactor": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/ruby-refactor/SKILL.md",
+      "computedHash": "7ce7408cb5765e13d6c05b7522c8af1d524e27601cc9de8f5e6537f2ae19b123"
+    },
+    "rust-implement": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/rust-implement/SKILL.md",
+      "computedHash": "3fc36da94bab98d0cbcc460a7c713b366accfe6a637d67f76a3b4a2cda3c9fdb"
+    },
+    "rust-refactor": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/rust-refactor/SKILL.md",
+      "computedHash": "f7f8e5d6b292b908edac066e318ec7af15a1b17b0346e7028dcfd2e271f83d9d"
+    },
+    "rust-write-tests": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/rust-write-tests/SKILL.md",
+      "computedHash": "e57c29753602c76e4224cb961b5cc407c11ebed45b8189707fd6d156fdfa1e30"
+    },
+    "same-results-less-code": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/same-results-less-code/SKILL.md",
+      "computedHash": "4202acb119cd4adf27050fd5b3a95f8dcb3af05f8eafc301dc62af4345dd83cb"
+    },
+    "search-ios26-docs": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/search-ios26-docs/SKILL.md",
+      "computedHash": "fd6d17d8b7347c763156d4975e873fc4ed5b562bd0d5e075151e3bf9233c1e14"
+    },
+    "search-macos26-docs": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/search-macos26-docs/SKILL.md",
+      "computedHash": "16da5b599fd74f6a5f1fb2a1a7cad1f4afcce238e083b65cc625e68578ca37ab"
+    },
+    "shadcn": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/shadcn/SKILL.md",
+      "computedHash": "6797fa10a40c51c48f734659596b292931e89f38c140b2eb6cc2890bc58f3dc9"
+    },
+    "shell": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/shell/SKILL.md",
+      "computedHash": "aec0cec9d04d4b969eba0255822bccae96512adb3aa6f80e90adf5884f60f5a8"
+    },
+    "skill-authoring": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/skill-authoring/SKILL.md",
+      "computedHash": "44404fdaeaead003f811190ffee431a591dc12e0e9ba07e0ef618348f0096d8d"
+    },
+    "sonarqube-ai-slop-gate": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/sonarqube-ai-slop-gate/SKILL.md",
+      "computedHash": "eab51d171498c6be971b417dd24a64c7a507b9b2998f86c2a62fa232d94fdd5a"
+    },
+    "staff-level-elixir": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/staff-level-elixir/SKILL.md",
+      "computedHash": "195a0dafa9d61957ea97680bdeb50e6e98519f976eae4f606fe455f34ba27672"
+    },
+    "storybook": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/storybook/SKILL.md",
+      "computedHash": "d580c43188848d5eb744ddc8131014f38285e049201005b05a52da0269bd2c13"
+    },
+    "stripe-inspired-api-design-rules": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/stripe-inspired-api-design-rules/SKILL.md",
+      "computedHash": "8d29b05bea12bf9dbc90fbaae09d1945aa7198702bc5798053d8f90cd32e5f40"
+    },
+    "swift-data": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/swift-data/SKILL.md",
+      "computedHash": "8479126a76b631a86130ec8988581bbdc76524182feecf2a65d9bdd79f9b91e3"
+    },
+    "swift-optimise": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/swift-optimise/SKILL.md",
+      "computedHash": "efeea1fdc74a667ca6555c6d3a4c06a814c0807385a7ec804eea27e2ffed0bc7"
+    },
+    "swift-refactor": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/swift-refactor/SKILL.md",
+      "computedHash": "8553527ca417f57298ccd0fd7e2e2f2a70d9ae22fdd1179436be4b10d3b54e55"
+    },
+    "swift-ui-architect": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/swift-ui-architect/SKILL.md",
+      "computedHash": "dfad89e28d2885999b697e61bdfdfdef680145ed75297d62bc7925595d55e678"
+    },
+    "tailwind": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/tailwind/SKILL.md",
+      "computedHash": "973f01e905e679240c2e5a6ade87338d2d34719c8a5306f5d1ef71682be22f65"
+    },
+    "tailwind-refactor": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/tailwind-refactor/SKILL.md",
+      "computedHash": "74cc16b48321d9a943016420fac621fa45011ca64e566ccdf65046439942a783"
+    },
+    "tailwind-responsive-ui": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/tailwind-responsive-ui/SKILL.md",
+      "computedHash": "0b4a3b0ecc73594314c99603eef2cce8c4691ba27b7e373f93838fdda5487266"
+    },
+    "tailwind-ui-refactor": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/tailwind-ui-refactor/SKILL.md",
+      "computedHash": "dbd03b1cd3ef596d0691ff4ba8d85e3cc79761203fdefb10a5eb5fb57bee0ae4"
+    },
+    "tanstack-query": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/tanstack-query/SKILL.md",
+      "computedHash": "f92abd0d7309c519f9947d749ecb20e79507a68d2d8752e9942228b019a52ccd"
+    },
+    "tdd": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/tdd/SKILL.md",
+      "computedHash": "7f3c216a330a5473509c9d8eb98445896c0f9e065d0b67b2bc6e61d828e74e7e"
+    },
+    "terminal-ui": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/terminal-ui/SKILL.md",
+      "computedHash": "693f8dec7160be453466e41d50623279e5f3b129fd310aec7d18a518fcce6a6a"
+    },
+    "theory-of-constraints": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/theory-of-constraints/SKILL.md",
+      "computedHash": "eb9cbacfe9588b003954abe4f6046f12938d96f350ac768b8e420a3c92933f77"
+    },
+    "think": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/think/SKILL.md",
+      "computedHash": "93980ecbdea64d16e2fbdefe5d784e94770081970571c1fe3beee828500625e0"
+    },
+    "threat-model": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/threat-model/SKILL.md",
+      "computedHash": "7298a719aadb8794233eda71b1b32acea99db6d265ac4fcf6b716821c0b4ea51"
+    },
+    "threat-patch": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/threat-patch/SKILL.md",
+      "computedHash": "79ab197b3f5a29d546bfb18ffa5962d9d53e379f5e0189242746d906be4b5450"
+    },
+    "trpc": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/trpc/SKILL.md",
+      "computedHash": "1d6c14bf640d28882459d0ce6bc2c22d1b5b0f4ac7396f293a7752ad3a2e97d8"
+    },
+    "ts-google": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/ts-google/SKILL.md",
+      "computedHash": "60a0dc9c6cf8e81e56adce31dca591b4261eb0f291e09b3a53e7da73d5f995fa"
     },
     "two-factor-authentication-best-practices": {
       "source": "better-auth/skills",
       "sourceType": "github",
       "skillPath": "better-auth/twoFactor/SKILL.md",
       "computedHash": "5bc3051aef5060db013f0b3cbe812c40dbae5c22d6ba3ddde4b941158362a197"
+    },
+    "typescript": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/typescript/SKILL.md",
+      "computedHash": "5cf1c3714eca76e65eb40939540dc585fa4d7295b81d51ebba5490a3ec6012b5"
+    },
+    "typescript-advanced-patterns": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/typescript-advanced-patterns/SKILL.md",
+      "computedHash": "0895e4f188def93f05a1708f621c94cd97a1ccdaaf4cbcff628c04d3b363e9aa"
+    },
+    "typescript-refactor": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/typescript-refactor/SKILL.md",
+      "computedHash": "8ea8df719cd12f7f3c7502341c75379ef19b27a5c011e34c27081545c23a094f"
+    },
+    "ui-design": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/ui-design/SKILL.md",
+      "computedHash": "9bb6421762ba99bbf0e5dc3b32ce0da9547ce884a0f712f4c6f528abe735ed47"
+    },
+    "uniwind": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/uniwind/SKILL.md",
+      "computedHash": "20011723a1efe575b6a15db5b5807140ed09fd69e3320fe900a9f8cc5107ce3d"
+    },
+    "unix-cli": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/unix-cli/SKILL.md",
+      "computedHash": "dcd006b12120cf085859c9930b54389667b0293b618b2245f1c1d44ba4434f6b"
+    },
+    "vhs": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/vhs/SKILL.md",
+      "computedHash": "814459b1d23774824b9cddcd68205471b6fc752945d0c33cbf6c979182752c37"
+    },
+    "vite": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/vite/SKILL.md",
+      "computedHash": "06bafa303aedaa6f6217773d4e3939bd1f71b1a2a170aeb5f9692b0f62f965eb"
+    },
+    "vitest": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/vitest/SKILL.md",
+      "computedHash": "2432cb7f9099423fb3768a925fa95d7f8a6dc56c76eaded47472f558bff7139e"
+    },
+    "web-rules": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/web-rules/SKILL.md",
+      "computedHash": "8f11a1f363913ddb62080d340f127ab6c4ee30033020fe66c1a74cbcaa094794"
+    },
+    "web-taste": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/web-taste/SKILL.md",
+      "computedHash": "3cb63aca4f19204624812ed82617e38adea1f1c94e106fa68aaae87cb7b7dacc"
+    },
+    "webpack-plugin-authoring": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/webpack-plugin-authoring/SKILL.md",
+      "computedHash": "a461948c5cb9d432b3a1f1dbc82077b5ac18d33550b20f621717ab9d61d50507"
+    },
+    "webpack-plugin-recipes": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/webpack-plugin-recipes/SKILL.md",
+      "computedHash": "168e72866d0a0b94d3a34812a45c975ac8587cf4337a85303a981fb9bdb03613"
+    },
+    "write-design-docs": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/write-design-docs/SKILL.md",
+      "computedHash": "34b2442228fea788c6d776e0b46aa5b290b9a5dfbf1120eb9999297aa69756de"
+    },
+    "wxt-browser-extensions": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/wxt-browser-extensions/SKILL.md",
+      "computedHash": "3cb5453d026a8a223bc3d788bd5ddb0dae230a39508ae002a66cbce67a8f0e96"
+    },
+    "yjs-nextjs": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/yjs-nextjs/SKILL.md",
+      "computedHash": "4a4990c1697f83a5c9cde7095e91d53e9ea6fcb1535bdff97dcbd07d8aa686b5"
+    },
+    "zod": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.curated/zod/SKILL.md",
+      "computedHash": "c69b5133b65643317236707f2cd3e521b4fc6e5ee5fd6c6c00cf62a37dfd0144"
+    },
+    "zustand": {
+      "source": "pproenca/dot-skills",
+      "sourceType": "github",
+      "skillPath": "skills/.experimental/zustand/SKILL.md",
+      "computedHash": "337c79809642db2ecec7677e47fe17f26115a000a35b66ec5da4c38e132b0a8d"
     }
   }
 }

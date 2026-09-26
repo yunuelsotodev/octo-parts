@@ -9,8 +9,8 @@ datasource db {
 }
 
 enum Role {
-  USER
-  ADMIN
+  user
+  admin
 }
 
 model User {
@@ -18,7 +18,7 @@ model User {
   name  String
   email String
 
-  role       Role      @default(USER)
+  role       Role      @default(user)
   banned     Boolean   @default(false)
   banReason  String?
   banExpires DateTime?

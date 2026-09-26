@@ -79,6 +79,9 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+
+  --spin-tire: speen-tire 1s ease-in-out 0.2s forwards;
+  --opacity-intro: introOpacity 1s ease-in-out 0.2s both;
 }
 
 .dark {
@@ -134,4 +137,24 @@
 
 .backdrop {
   background-color: rgba(24, 23, 23, 0.26);
+}
+
+@keyframes speen-tire {
+  0% {
+    transform: translateX(-0%) rotate(0deg);
+  } 
+
+  100% {
+    transform: translateX(300%) rotate(1080deg);
+  }
+}
+
+@keyframes introOpacity {
+  0% {
+    opacity: 0.3;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
