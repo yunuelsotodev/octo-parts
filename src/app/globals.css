@@ -139,6 +139,11 @@
   background-color: rgba(24, 23, 23, 0.26);
 }
 
+.hover-outline:hover {
+  cursor: pointer;
+  background-color: rgba(185, 185, 185, 0.432);
+}
+
 @keyframes speen-tire {
   0% {
     transform: translateX(-0%) rotate(0deg);

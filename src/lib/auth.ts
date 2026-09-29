@@ -33,7 +33,10 @@ export const auth = betterAuth({
     },
     account: {
         accountLinking: {
-            enabled: true
+            enabled: true,
+            trustedProviders: ['google', 'facebook'],
+            allowDifferentEmails: false,            
+            // requireLocalEmailVerified: false,
         }
     },
 });
