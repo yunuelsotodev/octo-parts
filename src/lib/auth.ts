@@ -7,6 +7,10 @@ export const auth = betterAuth({
     database: prismaAdapter(prisma, { provider: "postgresql" }),
     baseURL: process.env.BETTER_AUTH_URL!,
     secret: process.env.BETTER_AUTH_SECRET!,
+    trustedOrigins: [
+      "http://localhost:3000",
+      "https://emotional-dis-emerging-velocity.trycloudflare.com",
+    ],
 
     emailAndPassword: { enabled: true },
     user: {

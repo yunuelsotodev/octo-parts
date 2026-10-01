@@ -4,6 +4,7 @@ import "../globals.css";
 import { redirect } from "next/navigation";
 import { getUser } from "@/utils/getUserServe";
 import { Toaster } from "@/components/ui/sonner";
+import { SheetCustom } from "@/components/ui/sheetCustom";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -34,6 +35,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
             className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
         >
             <body className="min-h-full flex flex-col bg-background">
+                <SheetCustom/>
                 {children}
                 <Toaster />
             </body>
