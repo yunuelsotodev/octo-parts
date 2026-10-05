@@ -8,24 +8,28 @@ import {
 } from "@/components/ui/menubar"
 import {
   Sheet,
-  SheetClose,
   SheetContent,
-  SheetDescription,
   SheetFooter,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
+import { isAdmin } from "@/hooks/auth/admin"
+import { authClient } from "@/lib/auth-client"
 import { resolveTitle } from "@/lib/site"
+import { adminMenu, menu } from "@/utils/menu-service"
 import Image from "next/image"
+import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { IoIosMenu } from "react-icons/io"
 
+
 export function SheetCustom() {
 
+  const allMenu = [...menu, ...adminMenu];
   const path = usePathname();
-  const name = resolveTitle(path);
-
+  const name = resolveTitle(path, allMenu);
+  
   return (
     <Sheet>
       <Menubar className="w-full rounded-none h-12 justify-between">
@@ -43,30 +47,50 @@ export function SheetCustom() {
           />
         </MenubarMenu>
         <MenubarMenu>
-            <span>{name}</span>
+            <span className="text-lg">{name}</span>
           <Image src={'/favicon.ico'} alt="logo de rueda" width={30} height={30} />
         </MenubarMenu>
       </Menubar>
       <SheetContent side="left">
         <SheetHeader>
-          <SheetTitle>Edit profile</SheetTitle>
-          <SheetDescription>
-            Make changes to your profile here. Click save when you&apos;re done.
-          </SheetDescription>
+          <SheetTitle className='text-xl'>Menu</SheetTitle>         
         </SheetHeader>
         <div className="grid flex-1 auto-rows-min gap-6 px-4">
-          <div className="grid gap-3">
-            <Label htmlFor="sheet-demo-name">Name</Label>
-            <Input id="sheet-demo-name" defaultValue="Pedro Duarte" />
+          <div className="grid gap-1 text-lg">
+            {
+              menu.map(({url, name, icon: Icon}) => (
+                <Link key={url} href={url} className="m-2 flex flex-row gap-1 items-center">                  
+                  <Icon/>
+                  <span>{name}</span>
+                </Link>
+              ))
+            }          
           </div>
-          <div className="grid gap-3">
-            <Label htmlFor="sheet-demo-username">Username</Label>
-            <Input id="sheet-demo-username" defaultValue="@peduarte" />
+          { 
+            adminMenu.length > 0 && isAdmin() && (
+              <span className="w-full h-px bg-gray-300"></span>
+            )
+          }
+          <div className="grid gap-1 text-lg">
+            {
+              isAdmin() && adminMenu.map(({ url, name, icon: Icon }) => (
+                <Link key={url} href={url} className="m-2 flex flex-row gap-1 items-center">                  
+                  <Icon/>
+                  <span>{name}</span>
+                </Link>
+              ))
+            }
           </div>
         </div>
         <SheetFooter>
-          <Button type="submit">Save changes</Button>
-          <SheetClose render={<Button variant="outline">Close</Button>} />
+          {/* TODO: Profile edit and verification email */}
+          <Link href={''} className="w-full"> 
+            <Button type="button" className='w-full'>Editar perfil</Button>
+          </Link>
+          {/* TODO: Close session */}
+          <Link href={''} className="w-full">
+            <Button variant="outline" className='w-full'>Cerrar sesion</Button>         
+          </Link>
         </SheetFooter>
       </SheetContent>
     </Sheet>

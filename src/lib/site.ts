@@ -1,13 +1,8 @@
-const pageNames: Record<string, string> = {
-    'admin': 'Panel',
-    'admin/products': 'Productos'
-}
+import { Menu } from "@/interfaces/menu";
 
-export const resolveTitle = (pathname: string) : string => {
-    const key = pathname.replace(/^\//, '').replace(/\/$/, '');
-    if (pageNames[key]) return pageNames[key];
+export const resolveTitle = (pathname: string, allMenu: Menu[]): string => {
+    console.log(pathname);
+    const menu = allMenu.find(menu => `/${menu.url}` == pathname);
 
-    if (key.startsWith('admin/products/')) return 'Detalle de producto';
-
-    return key.split('/').pop()?.replace(/-/g, ' ') ?? '';
+    return menu?.name ?? '';
 }
