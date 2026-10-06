@@ -144,6 +144,16 @@
   background-color: rgba(185, 185, 185, 0.432);
 }
 
+.booble_animate {
+  height: 40px;
+  width: 90%;
+  background-color: rgba(61, 60, 60, 0.082);
+  position: absolute;
+  left: 10px;
+  border-radius: 10px;
+  top: 2px;
+}
+
 @keyframes speen-tire {
   0% {
     transform: translateX(-0%) rotate(0deg);

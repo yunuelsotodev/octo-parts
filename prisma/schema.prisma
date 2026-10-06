@@ -1,4 +1,3 @@
-
 generator client {
   provider = "prisma-client"
   output   = "../generated/prisma"
@@ -33,6 +32,51 @@ model User {
   @@unique([email])
   @@map("user")
 }
+
+model Product {
+  id             String          @id @default(nanoid())
+  slug           String          @unique
+  name           String
+  description    String
+  stock          Int
+  price          Float
+  code           String
+  productCarts   ProductCart[]
+  purchaseOrders PurchaseOrder[]
+}
+
+model Cart {
+  id           String        @id @default(nanoid())
+  name         String?
+  total        Float
+  productCarts ProductCart[]
+}
+
+model ProductCart {
+  id     String @id @default(nanoid())
+  amount Int
+  price  Float
+
+  productId String
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  cartId    String
+  cart      Cart    @relation(fields: [cartId], references: [id], onDelete: Cascade)
+
+  @@unique([productId, cartId])
+  @@index([productId])
+  @@index([cartId])
+}
+
+model PurchaseOrder {
+  id          String   @id @default(nanoid())
+  price       Float
+  amount      Int
+  description String?
+  productId   String?
+  product     Product? @relation(fields: [productId], references: [id], onDelete: SetNull)
+}
+
+// 
 
 model Session {
   id        String   @id

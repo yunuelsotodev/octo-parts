@@ -23,7 +23,7 @@ export const OAuthButtons = () => {
 
     return (
         <Field className="grid gap-4 sm:grid-cols-2 animate-(--opacity-intro)">
-            <Button variant="outline" className='bg-blue-500! border-transparent' type="button" onClick={onFacebookLogin}>
+            <Button variant="outline" className='bg-blue-500! border-transparent text-secondary' type="button" onClick={onFacebookLogin}>
                 <FaFacebookF size={60} width={20} height={50} />
                 Continuar con Facebook
             </Button>

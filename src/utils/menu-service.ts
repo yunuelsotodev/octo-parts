@@ -1,4 +1,3 @@
-import { IconType } from "react-icons/lib"
 import { AiFillProduct } from "react-icons/ai";
 import { MdProductionQuantityLimits } from "react-icons/md";
 import { BsCashStack } from "react-icons/bs";
@@ -9,22 +8,25 @@ import { MdOutlineWeb } from "react-icons/md";
 
 export const menu: Menu[] = [
     {
-        'url': 'admin/products',
+        'url': '/admin/products',
         'name': 'Productos',
-        'icon': AiFillProduct
+        'icon': AiFillProduct,
+        'position': 1,
     },
     {
-        'url': 'admin/shell',
+        'url': '/admin/shell',
         'name': 'Venta',
         'icon': MdProductionQuantityLimits,
+        'position': 48,
     },
     {
-        'url': 'admin/statements',
+        'url': '/admin/statements',
         'name': 'Estados de cuenta',
-        'icon': BsCashStack
+        'icon': BsCashStack,
+        'position': 96,
     },
     {
-        'url': 'admin/purchase-orders',
+        'url': '/admin/purchase-orders',
         'name': 'Registro de compra',
         'icon': MdShopTwo
     }
@@ -32,12 +34,12 @@ export const menu: Menu[] = [
 
 export const adminMenu: Menu[] = [
     {
-        'url': 'admin/users',
+        'url': '/admin/users',
         'name': 'Usuarios',
         'icon': FaUserLarge
     },
     {
-        'url': 'admin/',
+        'url': '/admin/',
         'name': 'Administrar web',
         'icon': MdOutlineWeb
     }
