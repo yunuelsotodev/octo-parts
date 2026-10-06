@@ -14,8 +14,8 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
-import { isAdmin } from "@/hooks/auth/admin"
-import { resolveTitle } from "@/lib/site"
+import { useIsAdmin } from "@/hooks/auth/admin"
+import { resolveTitle } from "@/utils/site"
 import { adminMenu, menu } from "@/utils/menu-service"
 import Image from "next/image"
 import Link from "next/link"
@@ -102,13 +102,13 @@ export function SheetCustom() {
             }          
           </div>
           { 
-            adminMenu.length > 0 && isAdmin() && (
+            adminMenu.length > 0 && useIsAdmin() && (
               <span className="w-full h-px bg-gray-300"></span>
             )
           }
           <div className="grid gap-1 text-lg">
             {
-              isAdmin() && adminMenu.map(({ url, name: internalName, icon: Icon }) => (
+              useIsAdmin() && adminMenu.map(({ url, name: internalName, icon: Icon }) => (
                 <Link key={url} href={url} className={`m-2 flex flex-row gap-2 items-center transition-all duration-75 ${internalName === menuRes?.name ? 'scale-[1.05]' : ''}`}>                  
                   <Icon/>
                   <span>{internalName}</span>

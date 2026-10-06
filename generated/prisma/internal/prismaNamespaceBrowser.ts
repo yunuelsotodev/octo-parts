@@ -52,6 +52,11 @@ export const AnyNull = runtime.AnyNull
 
 export const ModelName = {
   User: 'User',
+  Product: 'Product',
+  Image: 'Image',
+  Cart: 'Cart',
+  ProductCart: 'ProductCart',
+  PurchaseOrder: 'PurchaseOrder',
   Session: 'Session',
   Account: 'Account',
   Verification: 'Verification'
@@ -88,6 +93,65 @@ export const UserScalarFieldEnum = {
 } as const
 
 export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
+
+
+export const ProductScalarFieldEnum = {
+  id: 'id',
+  slug: 'slug',
+  name: 'name',
+  model: 'model',
+  year: 'year',
+  brand: 'brand',
+  description: 'description',
+  stock: 'stock',
+  price: 'price',
+  code: 'code'
+} as const
+
+export type ProductScalarFieldEnum = (typeof ProductScalarFieldEnum)[keyof typeof ProductScalarFieldEnum]
+
+
+export const ImageScalarFieldEnum = {
+  id: 'id',
+  shortName: 'shortName',
+  fullName: 'fullName',
+  extension: 'extension',
+  url: 'url',
+  productId: 'productId'
+} as const
+
+export type ImageScalarFieldEnum = (typeof ImageScalarFieldEnum)[keyof typeof ImageScalarFieldEnum]
+
+
+export const CartScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  total: 'total'
+} as const
+
+export type CartScalarFieldEnum = (typeof CartScalarFieldEnum)[keyof typeof CartScalarFieldEnum]
+
+
+export const ProductCartScalarFieldEnum = {
+  id: 'id',
+  amount: 'amount',
+  price: 'price',
+  productId: 'productId',
+  cartId: 'cartId'
+} as const
+
+export type ProductCartScalarFieldEnum = (typeof ProductCartScalarFieldEnum)[keyof typeof ProductCartScalarFieldEnum]
+
+
+export const PurchaseOrderScalarFieldEnum = {
+  id: 'id',
+  price: 'price',
+  amount: 'amount',
+  description: 'description',
+  productId: 'productId'
+} as const
+
+export type PurchaseOrderScalarFieldEnum = (typeof PurchaseOrderScalarFieldEnum)[keyof typeof PurchaseOrderScalarFieldEnum]
 
 
 export const SessionScalarFieldEnum = {

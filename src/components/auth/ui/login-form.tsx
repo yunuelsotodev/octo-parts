@@ -21,8 +21,8 @@ import { toast } from "sonner"
 export function LoginForm({
   className,
   ...props
-}: React.ComponentProps<"div">) {  
-  
+}: React.ComponentProps<"div">) {
+
   const router = useRouter();
 
   const onSubmit = async (data: LoginSchemaType) => {
@@ -36,8 +36,8 @@ export function LoginForm({
       router.push('/admin');
     } else {
       const errorM = res.error.status === 401 ? 'Credenciales incorrectas' : 'Error en el servidor, intentelo más tarde';
-      toast.error(errorM,{ position: 'top-center' });
-    } 
+      toast.error(errorM, { position: 'top-center' });
+    }
   }
 
   const form = useForm<LoginSchemaType>({
@@ -49,20 +49,20 @@ export function LoginForm({
   });
 
   const onInvalid = (errors: FieldErrors<LoginSchemaType>) => {
-      Object.values(errors).forEach((error) => {
-        if (error?.message) {
-          toast.error(error.message, { position: 'top-center' });
-        }
-      });
+    Object.values(errors).forEach((error) => {
+      if (error?.message) {
+        toast.error(error.message, { position: 'top-center' });
+      }
+    });
   }
 
   return (
     <div className={cn("flex flex-col gap-6", className)} {...props}>
-        <form onSubmit={form.handleSubmit(onSubmit, onInvalid)} noValidate>
-          <FieldGroup>
-            <div className="flex flex-col items-center gap-2 text-center text-secondary!">
-              <Image src={'/favicon.ico'} alt="logo de rueda" width={70} height={70} className="translate-x-[-300%] animate-(--spin-tire)" />
-              <h1 className="text-xl font-bold animate-(--opacity-intro)">Bienvenido a Octo Parts.</h1>
+      <form onSubmit={form.handleSubmit(onSubmit, onInvalid)} noValidate>
+        <FieldGroup>
+          <div className="flex flex-col items-center gap-2 text-center text-secondary!">
+            <Image src={'/favicon.ico'} alt="logo de rueda" width={70} height={70} className="translate-x-[-300%] animate-(--spin-tire)" />
+            <h1 className="text-xl font-bold animate-(--opacity-intro)">Bienvenido a Octo Parts.</h1>
           </div>
           <Controller
             name="email"
@@ -78,8 +78,8 @@ export function LoginForm({
                   autoComplete="email"
                   placeholder="m@example.com"
                   required
-                />   
-              </Field>              
+                />
+              </Field>
             )}
           />
           <Controller
@@ -96,28 +96,28 @@ export function LoginForm({
                   autoComplete="current-password"
                   placeholder="Contraseña"
                   required
-                />                
-              </Field>              
+                />
+              </Field>
             )}
           />
-            <Field className="animate-(--opacity-intro)">
+          <Field className="animate-(--opacity-intro)">
             <Button variant='secondary' type="submit" disabled={form.formState.isSubmitting}>
               {
                 form.formState.isSubmitting ? (
                   'Entrando'
-                ): (
+                ) : (
                   'Entrar'
                 )
-              }              
+              }
             </Button>
-            </Field>
-            <CustomSeparator text="O" />
-            <OAuthButtons />
-          </FieldGroup>
-          <br />
-          <br />
-          <br />
-        </form>
+          </Field>
+          <CustomSeparator text="O" />
+          <OAuthButtons />
+        </FieldGroup>
+        <br />
+        <br />
+        <br />
+      </form>
     </div>
   )
 }

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
 import { redirect } from "next/navigation";
-import { getUser } from "@/utils/getUserServe";
+import { getUser } from "@/lib/server/getUserServe";
 import { Toaster } from "@/components/ui/sonner";
 import { SheetCustom } from "@/components/ui/sheetCustom";
 

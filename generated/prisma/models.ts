@@ -9,6 +9,11 @@
  * 🟢 You can import this file directly.
  */
 export type * from './models/User'
+export type * from './models/Product'
+export type * from './models/Image'
+export type * from './models/Cart'
+export type * from './models/ProductCart'
+export type * from './models/PurchaseOrder'
 export type * from './models/Session'
 export type * from './models/Account'
 export type * from './models/Verification'

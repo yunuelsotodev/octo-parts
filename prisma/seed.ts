@@ -1,6 +1,6 @@
-import { Role } from "../../generated/prisma/enums";
-import { auth } from "./auth";
-import { prisma } from "./db";
+import { auth } from "@/lib/auth";
+import { Role } from "../generated/prisma/enums";
+import { prisma } from "@/lib/db";
 
 const seed = async () => {
     await prisma.user.deleteMany();

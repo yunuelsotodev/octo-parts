@@ -47,6 +47,31 @@ export { Prisma }
  */
 export type User = Prisma.UserModel
 /**
+ * Model Product
+ * 
+ */
+export type Product = Prisma.ProductModel
+/**
+ * Model Image
+ * 
+ */
+export type Image = Prisma.ImageModel
+/**
+ * Model Cart
+ * 
+ */
+export type Cart = Prisma.CartModel
+/**
+ * Model ProductCart
+ * 
+ */
+export type ProductCart = Prisma.ProductCartModel
+/**
+ * Model PurchaseOrder
+ * 
+ */
+export type PurchaseOrder = Prisma.PurchaseOrderModel
+/**
  * Model Session
  * 
  */

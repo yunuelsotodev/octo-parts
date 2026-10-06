@@ -34,15 +34,31 @@ model User {
 }
 
 model Product {
-  id             String          @id @default(nanoid())
-  slug           String          @unique
-  name           String
-  description    String
-  stock          Int
-  price          Float
-  code           String
+  id          String  @id @default(nanoid())
+  slug        String  @unique
+  name        String
+  model       String?
+  year        Int?
+  brand       String?
+  description String?
+  stock       Int
+  price       Float
+  code        String?
+
   productCarts   ProductCart[]
   purchaseOrders PurchaseOrder[]
+  images         Image[]
+}
+
+model Image {
+  id        String @id @default(nanoid())
+  shortName String
+  fullName  String
+  extension String
+  url       String
+
+  productId String
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
 }
 
 model Cart {

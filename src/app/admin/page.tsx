@@ -1,4 +1,4 @@
-import { getUser } from '@/utils/getUserServe'
+import { getUser } from '@/lib/server/getUserServe'
 import { redirect } from 'next/navigation'
 
 export default async function page() {
