@@ -1,6 +1,7 @@
-import FormProduct from "@/components/product/formProduct";
-import { ModalAdd } from "@/components/product/modalAdd";
+import { ModalAdd } from "@/components/features/modalAdd";
 import { Button } from "@/components/ui/button";
+import FormProduct from "./_components/FormProduct";
+import CartProducts from "./_components/CartProducts";
 
 export default function Products() {
   
@@ -10,12 +11,11 @@ export default function Products() {
         <ModalAdd
           button={<Button>+ Pieza nueva</Button>}
           formBody={<FormProduct/>}
-          subTitle="Agrega un nuevo producto"
           title="Agregar producto"
         />        
       </section>
       <section className="overflow-y-scroll h-full">
-          
+          <CartProducts/>
       </section>
     </main>
   )

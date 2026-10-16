@@ -33,6 +33,21 @@ model User {
   @@map("user")
 }
 
+model Model {
+  id      String  @id @default(nanoid())
+  name    String
+
+  brand   Brand?  @relation(fields: [brandId], references: [id])
+  brandId String?  
+}
+
+model Brand {
+  id   String @id @default(nanoid())
+  name String
+
+  models Model[]
+}
+
 model Product {
   id          String  @id @default(nanoid())
   slug        String  @unique

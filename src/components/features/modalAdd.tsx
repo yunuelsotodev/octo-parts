@@ -28,7 +28,7 @@ export function ModalAdd({button, formBody, subTitle, title} : Props) {
         <DialogTrigger render={button} />
         <DialogContent className="sm:max-w-2xl gap-2">
           <DialogHeader>
-            <DialogTitle>{title}</DialogTitle>
+            <DialogTitle className={'text-xl'}>{title}</DialogTitle>
             {
                 subTitle && (
                     <DialogDescription>
