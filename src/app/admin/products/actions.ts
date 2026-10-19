@@ -4,6 +4,7 @@ import { prisma } from "@/lib/db";
 import { submitImageR2 } from "@/lib/server/r2-actions";
 import { productSchema, ProductSchemaType } from "@/lib/zodSchemas/product/zodSchemaProduct";
 import { slugConverter } from "@/utils/sulg-converter";
+import { revalidatePath } from "next/cache";
 
 export const createProduct = async (values: ProductSchemaType) : Promise<APIResponse> => {
 
@@ -44,7 +45,9 @@ export const createProduct = async (values: ProductSchemaType) : Promise<APIResp
                         productId: product.id
                     }))
                 });
-            });            
+            });   
+            
+            revalidatePath('products');
         } else {
             return {
                 status: 500,

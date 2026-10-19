@@ -1324,7 +1324,9 @@ export const ProductScalarFieldEnum = {
   description: 'description',
   stock: 'stock',
   price: 'price',
-  code: 'code'
+  code: 'code',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
 } as const
 
 export type ProductScalarFieldEnum = (typeof ProductScalarFieldEnum)[keyof typeof ProductScalarFieldEnum]
@@ -1345,7 +1347,9 @@ export type ImageScalarFieldEnum = (typeof ImageScalarFieldEnum)[keyof typeof Im
 export const CartScalarFieldEnum = {
   id: 'id',
   name: 'name',
-  total: 'total'
+  total: 'total',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
 } as const
 
 export type CartScalarFieldEnum = (typeof CartScalarFieldEnum)[keyof typeof CartScalarFieldEnum]
@@ -1356,7 +1360,9 @@ export const ProductCartScalarFieldEnum = {
   amount: 'amount',
   price: 'price',
   productId: 'productId',
-  cartId: 'cartId'
+  cartId: 'cartId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
 } as const
 
 export type ProductCartScalarFieldEnum = (typeof ProductCartScalarFieldEnum)[keyof typeof ProductCartScalarFieldEnum]
@@ -1367,6 +1373,8 @@ export const PurchaseOrderScalarFieldEnum = {
   price: 'price',
   amount: 'amount',
   description: 'description',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
   productId: 'productId'
 } as const
 

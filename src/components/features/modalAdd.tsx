@@ -1,3 +1,4 @@
+'use client'
 import { Button } from "@/components/ui/button"
 import {
   Dialog,
@@ -13,17 +14,20 @@ import { Field, FieldGroup } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { JSX } from "react/jsx-runtime"
+import { cloneElement, useState, type ReactElement } from "react"
 
 interface Props {
     button: JSX.Element,
-    formBody: JSX.Element,
+    formBody: ReactElement<{ onSuccess?: () => void }>,
     subTitle?: string,
     title: string
 }
 
 export function ModalAdd({button, formBody, subTitle, title} : Props) {
+  const [open, setOpen] = useState(false);
+
   return (
-    <Dialog>
+    <Dialog open={open} onOpenChange={setOpen}>
       <div>
         <DialogTrigger render={button} />
         <DialogContent className="sm:max-w-2xl gap-2">
@@ -37,7 +41,7 @@ export function ModalAdd({button, formBody, subTitle, title} : Props) {
                 )
             }
           </DialogHeader>
-            {formBody}            
+            {cloneElement(formBody, { onSuccess: () => setOpen(false) })}            
           <DialogFooter className="mt-0">
             <DialogClose render={<Button variant="outline">Cancel</Button>} />
           </DialogFooter>

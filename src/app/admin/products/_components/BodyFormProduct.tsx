@@ -22,10 +22,11 @@ interface Props {
   },
   models: Model[],
   brands: Array<Brand & {models: Model[]}>,
-  years: Option[]
+  years: Option[],
+  onSuccess?: () => void,
 }
 
-export default function BodyFormProduct({ models, brands, product, years }: Props) {
+export default function BodyFormProduct({ models, brands, product, years, onSuccess }: Props) {
   
   const modelList = models.map(model => {
     return {
@@ -44,6 +45,14 @@ export default function BodyFormProduct({ models, brands, product, years }: Prop
   });
 
   const [existImages, setExistImages] = useState(product?.images || []);
+
+  const handleModel = (brandName: string|null) => {
+    const brand = brands.find(brand => brand.name === brandName);
+    const models = brand?.models;
+    if (models) {
+      setModelListState(models.map(model => ({ label: model.name, value: model.name })));      
+    }
+  }
 
   const { register, control, handleSubmit, setValue, getValues, formState: { errors } } = useForm<ProductSchemaType>({
     resolver: zodResolver(productSchema),
@@ -90,21 +99,14 @@ export default function BodyFormProduct({ models, brands, product, years }: Prop
         }
 
         toast.success(response.message, { position: 'bottom-right', richColors: true});
+        onSuccess?.();
         console.log(values);
       } catch (e) {
         toast.error('Ocurrio un error en el servidor, favor de intentar más tarde.', { position: 'bottom-right', richColors: false });
         console.error(e);
       }
     });
-  }
-
-  const handleModel = (brandName: string|null) => {
-    const brand = brands.find(brand => brand.name === brandName);
-    const models = brand?.models;
-    if (models) {
-      setModelListState(models.map(model => ({ label: model.name, value: model.name })));      
-    }
-  }
+  }  
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} method="POST">

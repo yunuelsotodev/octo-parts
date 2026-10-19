@@ -6,6 +6,14 @@ const nextConfig: NextConfig = {
       bodySizeLimit: '30mb',
     },
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'pub-16d0c5d6a27f41eda2dcdb2cc47d49ad.r2.dev'
+      }
+    ]
+  },
   allowedDevOrigins: [
     "192.168.1.143",
     "localhost",
