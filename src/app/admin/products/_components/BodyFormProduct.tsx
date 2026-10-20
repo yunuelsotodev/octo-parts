@@ -14,20 +14,21 @@ import { CustomSelect } from "@/components/ui/customSelect"
 import { Brand, Image, Model, Product } from "../../../../../generated/prisma/client";
 import { Field, FieldDescription, FieldError, FieldGroup, FieldLabel } from "@/components/ui/field"
 import { Option } from "@/interfaces/option";
-import { createProduct } from "../actions";
+import { createProduct, deleteProduct, updateProduct } from "../actions";
+import { AlertDialogDelete } from "@/components/features/AlertDialogDelete";
+import { Spinner } from "@/components/ui/spinner";
 
 interface Props {
   product?: Product & {
     images: Image[]
   },
   models: Model[],
-  brands: Array<Brand & {models: Model[]}>,
+  brands: Array<Brand & { models: Model[] }>,
   years: Option[],
   onSuccess?: () => void,
 }
 
 export default function BodyFormProduct({ models, brands, product, years, onSuccess }: Props) {
-  
   const modelList = models.map(model => {
     return {
       label: model.name,
@@ -46,15 +47,17 @@ export default function BodyFormProduct({ models, brands, product, years, onSucc
 
   const [existImages, setExistImages] = useState(product?.images || []);
 
-  const handleModel = (brandName: string|null) => {
+  const [isLoadingDelete, setIsLoadingDelete] = useState(false);
+
+  const handleModel = (brandName: string | null) => {
     const brand = brands.find(brand => brand.name === brandName);
     const models = brand?.models;
     if (models) {
-      setModelListState(models.map(model => ({ label: model.name, value: model.name })));      
+      setModelListState(models.map(model => ({ label: model.name, value: model.name })));
     }
   }
 
-  const { register, control, handleSubmit, setValue, getValues, formState: { errors } } = useForm<ProductSchemaType>({
+  const { register, control, handleSubmit, setValue, getValues, formState: { errors, isSubmitting } } = useForm<ProductSchemaType>({
     resolver: zodResolver(productSchema),
     defaultValues: {
       brand: product?.brand ?? '',
@@ -67,6 +70,7 @@ export default function BodyFormProduct({ models, brands, product, years, onSucc
       year: product?.year ?? undefined,
       images: [],
       imageRemoves: [],
+      updateP: product ? true : false,
     }
   });
 
@@ -89,24 +93,48 @@ export default function BodyFormProduct({ models, brands, product, years, onSucc
   }
 
   const onSubmit = (values: ProductSchemaType) => {
+    setIsLoadingDelete(true);
+
     startTransition(async () => {
       try {
-        const response = await createProduct(values);
+        const response = product ? await updateProduct(values, product.id) : await createProduct(values);
 
         if (response.status != 200) {
-          toast.error(response.message, { position: 'bottom-right', richColors: true })
+          toast.error(response.message, { position: 'top-center', richColors: true })
           return;
         }
 
-        toast.success(response.message, { position: 'bottom-right', richColors: true});
+        toast.success(response.message, { position: 'top-center', richColors: true });
         onSuccess?.();
-        console.log(values);
+
       } catch (e) {
-        toast.error('Ocurrio un error en el servidor, favor de intentar más tarde.', { position: 'bottom-right', richColors: false });
+        toast.error('Ocurrio un error en el servidor, favor de intentar más tarde.', { position: 'bottom-right', richColors: true });
         console.error(e);
       }
     });
-  }  
+    
+    setIsLoadingDelete(false);
+  }
+
+  const onDelete = (id: string) => {
+    startTransition(async () => {
+      try {
+        const response = await deleteProduct(id);
+
+        if (response.status != 200) {
+          toast.error(response.message, { position: 'top-center', richColors: true });
+          return;
+        }
+
+        toast.success(response.message, { position: 'top-center', richColors: true });
+        onSuccess?.();
+
+      } catch (e) {
+        toast.error('Ocurrio un error en el servidor, favor de intentar más tarde.', { position: 'top-center', richColors: true });
+        console.error(e);
+      }
+    });
+  }
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} method="POST">
@@ -309,7 +337,48 @@ export default function BodyFormProduct({ models, brands, product, years, onSucc
             }
           </Field>
         </FieldGroup>
-        <Button type="submit" className={'w-full mt-4 sticky bottom-0'}>Guardar producto</Button>
+        <div className="w-full mt-4 sticky bottom-0 bg-white z-10 grid grid-cols-1 gap-2">
+          <Button type="submit" disabled={isSubmitting}>
+            {
+              isSubmitting ? (
+                <>
+                  <Spinner />
+                  Guardando producto
+                </>
+              ) : (
+                <>
+                  Guardar producto
+                </>
+              )
+            }
+          </Button>
+          {
+            product && (
+              <AlertDialogDelete
+                onDelete={onDelete}
+                id={product.id}
+                button={
+                  <Button type="button" variant='destructive' disabled={isSubmitting || isLoadingDelete}>
+                    {
+                      !isLoadingDelete ? (
+                        <>
+                          Eliminar producto
+                        </>
+                      ) : (
+                        <>
+                          <Spinner />
+                          Eliminando producto
+                        </>
+                      )
+                    }
+                  </Button>
+                }
+                title={`¿Eliminar ${product.name}?`}
+                body={"Deseas eliminar este producto"}
+              />
+            )
+          }
+        </div>
       </div>
     </form>
   )

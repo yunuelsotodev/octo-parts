@@ -17,31 +17,44 @@ import { JSX } from "react/jsx-runtime"
 import { cloneElement, useState, type ReactElement } from "react"
 
 interface Props {
-    button: JSX.Element,
-    formBody: ReactElement<{ onSuccess?: () => void }>,
-    subTitle?: string,
-    title: string
+  button?: JSX.Element,
+  formBody: ReactElement<{ onSuccess?: () => void }>,
+  subTitle?: string,
+  title: string,
+  open?: boolean,
+  onOpenChange?: (open: boolean) => void,
 }
 
-export function ModalAdd({button, formBody, subTitle, title} : Props) {
-  const [open, setOpen] = useState(false);
+export function ModalAdd({ button, formBody, subTitle, title, onOpenChange, open}: Props) {
+  const [internalOpen, setInternalOpen] = useState(false);
+  const isControlled = open !== undefined;
+  const dialogOpen = isControlled ? open : internalOpen;
+
+  const handleOpenChange = (nextOpen: boolean) => {
+    if (!isControlled) setInternalOpen(nextOpen);
+    onOpenChange?.(nextOpen);
+  };
 
   return (
-    <Dialog open={open} onOpenChange={setOpen}>
+    <Dialog open={dialogOpen} onOpenChange={handleOpenChange}>
       <div>
-        <DialogTrigger render={button} />
+        {
+          button && (
+            <DialogTrigger render={button} />
+          )
+        }
         <DialogContent className="sm:max-w-2xl gap-2">
           <DialogHeader>
             <DialogTitle className={'text-xl'}>{title}</DialogTitle>
             {
-                subTitle && (
-                    <DialogDescription>
-                        {subTitle}
-                    </DialogDescription>                                    
-                )
+              subTitle && (
+                <DialogDescription>
+                  {subTitle}
+                </DialogDescription>
+              )
             }
           </DialogHeader>
-            {cloneElement(formBody, { onSuccess: () => setOpen(false) })}            
+          {cloneElement(formBody, { onSuccess: () => handleOpenChange(false) })}
           <DialogFooter className="mt-0">
             <DialogClose render={<Button variant="outline">Cancel</Button>} />
           </DialogFooter>

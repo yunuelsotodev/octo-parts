@@ -14,11 +14,11 @@ export const imageRemoveSchema = z.object({
     id: z.nanoid(),
 });
 
-export const productSchema = z.object({
+export const productSchema = z.object({  
+    updateP: z.boolean(), // <--- Agregamos el campo update
     images: z
         .array(imageSchema)
-        .min(1, { message: 'Debes seleccionar al menos una imagen' })
-        .max(5, { message: 'Solo puedes subir 5 imagenes por articulo' }),   
+        .max(5, { message: 'Solo puedes subir 5 imagenes por articulo' }),
     imageRemoves: z
         .array(imageRemoveSchema),        
     name: z
@@ -43,6 +43,14 @@ export const productSchema = z.object({
         .min(0, {message:"La cantidad en stock debe de ser mayor a 0"}),
     code: z
         .string(),
+}).superRefine((data, ctx) => {
+    if (!data.updateP && (!data.images || data.images.length === 0)) {
+        ctx.addIssue({
+            code: z.ZodIssueCode.custom,
+            message: 'Debes de seleccionar al menos una imagen',
+            path: ['images']
+        })
+    }
 });
 
 export type ProductSchemaType = z.infer<typeof productSchema>

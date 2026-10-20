@@ -22,8 +22,11 @@ export default async function Products() {
           title="Agregar producto"
         />
       </section>
-      <section className="overflow-y-scroll flex-1 min-h-0 pt-2 px-2">
-          <CartProducts products={products}/>
+      <section className="overflow-y-scroll flex-1 min-h-0 px-2">
+        <CartProducts products={products} brands={brands} models={models} years={years}/>        
+        <br />
+        <br />
+        <br />
       </section>
     </main>
   )

@@ -1,6 +1,7 @@
-import { PutObjectCommand } from '@aws-sdk/client-s3';
+import { Bucket$, DeleteObjectCommand, PutObjectCommand } from '@aws-sdk/client-s3';
 import { ACCEPTED_IMAGE_TYPES, MAX_FILE_SIZE } from '../zodSchemas/product/zodSchemaProduct';
 import { r2Client } from '@/utils/r2-utils';
+import { APIResponse } from '@/interfaces/apiResponse';
 
 export const submitImageR2 = async (data: {id: string, file: File}[]): Promise<ResponseImages> => {
     if (!data || data.length === 0) {
@@ -88,3 +89,26 @@ export const submitImageR2 = async (data: {id: string, file: File}[]): Promise<R
         images: fileDataResponse
     }
 }
+
+export const deleteImageR2 = async (name: string): Promise<APIResponse> => {
+    if (!name) return { status: 500, message: 'Nombre vacio' }
+
+    try {
+        const deleteCommand = new DeleteObjectCommand({
+            Bucket: process.env.R2_BUCKET_NAME,
+            Key: name
+        });
+
+        await r2Client.send(deleteCommand);
+    } catch (e) {
+        return {
+            status: 500,
+            message: 'Error al eliminar la imagen del servidor'
+        }
+    }
+
+    return {
+        status: 200,
+        message: 'Imagen eliminada con exito'
+    }
+} 
