@@ -1,5 +1,4 @@
 import { formatCurrency } from '@/utils/formart-currecny'
-import Image from 'next/image'
 import { BsCartPlus } from 'react-icons/bs'
 import { FaRegShareFromSquare } from 'react-icons/fa6'
 import { IoIosArrowDown } from 'react-icons/io'
@@ -10,9 +9,10 @@ import ProductImageGallery from '@/components/product/ProductImageGallery'
 interface Props {
     product: Product & { images: Img[] },
     onOpen?: (value: string) => void,
+    onOpenSheet?: (value: string) => void,
 }
 
-function ProductCart({product, onOpen} : Props) {
+function ProductCart({product, onOpen, onOpenSheet} : Props) {
     return (
         <div key={product.slug} className='h-auto rounded-2xl shadow-gray-300 shadow-[3px_3px_4px_1px] w-full p-2'>
             {/* <Image className='h-50 w-full object-cover rounded-2xl' src={product.images[0].url} alt={product.slug} height='1000' width='1000' /> */}
@@ -68,7 +68,7 @@ function ProductCart({product, onOpen} : Props) {
                 </ul>
             </div>
             <div className='flex flex-row justify-between p-2 pb-0 items-center'>
-                <span className='text-blue-400 flex flex-row items-center justify-center'>
+                <span className='text-blue-400 flex flex-row items-center justify-center' onClick={() => onOpenSheet?.(product.id)}>
                     Ver otros precios
                     <IoIosArrowDown />
                 </span>

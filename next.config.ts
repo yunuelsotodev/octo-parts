@@ -11,6 +11,14 @@ const nextConfig: NextConfig = {
       {
         protocol: 'https',
         hostname: 'pub-16d0c5d6a27f41eda2dcdb2cc47d49ad.r2.dev'
+      },
+      {
+        protocol: 'https',
+        hostname: 'm.media-amazon.com'
+      },
+      {
+        protocol: 'https',
+        hostname: 'http2.mlstatic.com'
       }
     ]
   },

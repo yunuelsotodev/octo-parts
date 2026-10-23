@@ -10,6 +10,7 @@ import { useCallback, useState } from 'react';
 import ProductCart from './ProductCart'
 import { ModalAdd } from '@/components/features/modalAdd'
 import BodyFormProduct from './BodyFormProduct'
+import { SheetLeft } from '@/components/product/SheetLeft'
 
 interface Props {
   products: Array<Product & { images: Img[] }>,
@@ -21,6 +22,8 @@ interface Props {
 export default function CartProducts({products, brands, models, years} : Props) {
 
   const [open, setOpen] = useState(false);
+  const [openSheet, setOpenSheet] = useState(false);  
+
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const selected = products.find(p => p.id === selectedId) ?? null;
 
@@ -33,12 +36,21 @@ export default function CartProducts({products, brands, models, years} : Props) 
     setOpen(nextOpen);
   }, []);
 
+  const handleOpenSheet = useCallback((id: string) => {
+    setSelectedId(id);
+    setOpenSheet(true);
+  }, []);
+
+  const handleOpenSheetChange = useCallback((nextOpen: boolean) => {
+    setOpenSheet(nextOpen);
+  }, []);
+
   return (
     <>
       <div className='flex flex-col gap-2 justify-center items-start'> 
         {
           products.map(product => (
-            <ProductCart product={product} key={product.id} onOpen={handleOpen} />
+            <ProductCart product={product} key={product.id} onOpen={handleOpen} onOpenSheet={handleOpenSheet} />
           ))
         }
       </div>
@@ -55,6 +67,14 @@ export default function CartProducts({products, brands, models, years} : Props) 
             years={years}
           />
         }
+      />
+      <SheetLeft
+        open={openSheet}
+        title="Lista de precios"
+        product={selected}
+        description='Resultados de busqueda en otros sitios de '
+        key={selectedId ?? 'new'}
+        onOpenChange={handleOpenSheetChange}
       />
     </>
   )
