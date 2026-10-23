@@ -7,11 +7,9 @@ export const navigation = async (name: string, model: string | null = '', brand:
     const terms = getTerms(name, model, brand, year);
 
     const amazonProducts = await searchAmazon(terms);
-    const mLProducts = await searchMercadoLibreAPI(terms);
 
     const products: ProductScrapp[] = [
-        ...amazonProducts,
-        ...mLProducts
+        ...amazonProducts,      
     ];
 
     return products;
@@ -28,8 +26,8 @@ async function searchAmazon(terms: (string | undefined)[]): Promise<ProductScrap
 
     const products = await page.$$eval('div[role="listitem"]',
         (results) => (
-            results.slice(0, 4).map((el) => ({
-                title: el.querySelector('[data-cy="title-recipe"] span')?.textContent ?? null,
+            results.slice(0, 10).map((el) => ({
+                title: el.querySelector('[data-cy="title-recipe"] span')?.textContent ?? '',
                 price: el.querySelector('.a-price-whole')?.textContent ?? null,
                 image: el.querySelector('.s-image')?.getAttribute('src') ?? null,
                 url: 'https://www.amazon.com.mx/' + (el.querySelector('a')?.getAttribute('href') ?? '')

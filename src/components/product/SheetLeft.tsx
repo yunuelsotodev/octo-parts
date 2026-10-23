@@ -48,14 +48,17 @@ export function SheetLeft({ openButton, title, product, description, open = fals
         {
             name: 'Mercado Libre',
             url: `https://listado.mercadolibre.com.mx/${terms.join('-')}`,
+            logo: ''
         },
         {
             name: 'Amazon',
-            url: `https://www.amazon.com.mx/s?k=${terms.join('+')}`
+            url: `https://www.amazon.com.mx/s?k=${terms.join('+')}`,
+            logo: ''
         },
         {
             name: 'Autozone',
-            url: `https://www.autozone.com.mx/searchresult?searchText=${terms.join('+')}`
+            url: `https://www.autozone.com.mx/searchresult?searchText=${terms.join('+')}`,
+            logo: ''
         }
     ];
 
@@ -70,7 +73,7 @@ export function SheetLeft({ openButton, title, product, description, open = fals
             let results = null; 
             
             if(searchDate)
-                searchDate.setDate(searchDate.getDate() + 10);
+                searchDate.setDate(searchDate.getDate() + 2);
 
             if (!scrapProducts || !searchDate || currentDate > searchDate ) {
                 results = await getScrapedProductsAction(product?.name ?? '', product?.model, product?.brand, product?.year ?? null);   
@@ -129,10 +132,16 @@ export function SheetLeft({ openButton, title, product, description, open = fals
                                         <div key={2} className="h-20 w-[90%] animate-pulse bg-gray-300 rounded-2xl"></div>
                                         <div key={3} className="h-20 w-[90%] animate-pulse bg-gray-300 rounded-2xl"></div>
                                         <div key={4} className="h-20 w-[90%] animate-pulse bg-gray-300 rounded-2xl"></div>
+                                        <div key={5} className="h-20 w-[90%] animate-pulse bg-gray-300 rounded-2xl"></div>
+                                        <div key={6} className="h-20 w-[90%] animate-pulse bg-gray-300 rounded-2xl"></div>
+                                        <div key={7} className="h-20 w-[90%] animate-pulse bg-gray-300 rounded-2xl"></div>
+                                        <div key={8} className="h-20 w-[90%] animate-pulse bg-gray-300 rounded-2xl"></div>
+                                        <div key={9} className="h-20 w-[90%] animate-pulse bg-gray-300 rounded-2xl"></div>
+                                        <div key={10} className="h-20 w-[90%] animate-pulse bg-gray-300 rounded-2xl"></div>
                                     </>
                                 ) : (
-                                    productsScrapp.map(productScrapp => (
-                                        <div key={productScrapp.title} className="min-h-20 max-h-max w-full flex flex-col gap-1 border-b">                                            
+                                    productsScrapp.map((productScrapp, key) => (
+                                        <div key={`${productScrapp.title?.trim()}-${key}`} className="min-h-20 max-h-max w-full flex flex-col gap-1 border-b">                                            
                                             <div className="grid grid-cols-[30%_68%] gap-1 items-center">
                                                 {
                                                     productScrapp.image && (

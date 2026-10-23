@@ -1,7 +1,7 @@
 import { ProductScrapp } from '@/interfaces/product-scrapp';
-import { mapperResultToProductScrapp } from '../infrastructure/mercadolibre.mapper';
-import { Result, Paging, Root } from '../infrastructure/mercadolibre.types';
+import { Root } from '../infrastructure/mercadolibre.types';
 import { ProductDetail } from '../infrastructure/mercadolibre.detail.types';
+import { mapperProductScrapp } from '../infrastructure/mercadolibre.detail.mapper';
 
 export async function searchMercadoLibreAPI(terms: (string | undefined)[]): Promise<ProductScrapp[]> {
     const query = terms.filter(Boolean).join(' ');
@@ -32,12 +32,17 @@ export async function searchMercadoLibreAPI(terms: (string | undefined)[]): Prom
             return [];
         }        
 
-        console.log(data);
+        const productScrapper: ProductScrapp[] = [];
 
         for (const product of data.results) {
-            const productDetail = await getProductByID(product.catalog_product_id, accessToken);            
+            const productDetail = await getProductByID(product.catalog_product_id, accessToken);    
+            if (productDetail) {
+                const mappedProductD = mapperProductScrapp(productDetail);
+                productScrapper.push(mappedProductD);                
+            }
         }
-        return [];
+
+        return productScrapper;
 
     } catch (error) {
         console.error('Error de red o ejecución en la API de Mercado Libre:', error);
@@ -84,10 +89,7 @@ export async function getProductByID(catalog_id: string, accessToken: string)
         }
     });
 
-    const data : ProductDetail = await response.json();       
-    
-    console.log('-----------------------------------------------Producto: ')
-    console.log(JSON.stringify(data));
+    const data: ProductDetail = await response.json();         
 
     return data;
 }

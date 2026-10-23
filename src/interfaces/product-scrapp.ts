@@ -1,5 +1,5 @@
 export interface ProductScrapp {
-    title: string | null,
+    title: string,
     price: string | null,
     image: string | null,
     url: string | null
