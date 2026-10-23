@@ -72,7 +72,6 @@ export default function CartProducts({products, brands, models, years} : Props) 
         open={openSheet}
         title="Lista de precios"
         product={selected}
-        description='Resultados de busqueda en otros sitios de '
         key={selectedId ?? 'new'}
         onOpenChange={handleOpenSheetChange}
       />

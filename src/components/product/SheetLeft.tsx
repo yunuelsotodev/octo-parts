@@ -48,17 +48,17 @@ export function SheetLeft({ openButton, title, product, description, open = fals
         {
             name: 'Mercado Libre',
             url: `https://listado.mercadolibre.com.mx/${terms.join('-')}`,
-            logo: ''
+            logo: '/assets/logo-mercadolibre.png'
         },
         {
             name: 'Amazon',
             url: `https://www.amazon.com.mx/s?k=${terms.join('+')}`,
-            logo: ''
+            logo: '/assets/logo-amazon.png'
         },
         {
             name: 'Autozone',
             url: `https://www.autozone.com.mx/searchresult?searchText=${terms.join('+')}`,
-            logo: ''
+            logo: '/assets/logo-autozone.jpg'
         }
     ];
 
@@ -99,25 +99,21 @@ export function SheetLeft({ openButton, title, product, description, open = fals
                 )
             }
             <SheetContent>
-                <SheetHeader>
+                <SheetHeader className=" pb-0">
                     <SheetTitle className='text-xl'>{title}</SheetTitle>
-                    {
-                        description && (
-                            <SheetDescription>
-                                {description}
-                                <strong>
-                                    {product?.name}
-                                </strong>
-                            </SheetDescription>
-                        )
-                    }
+                    <SheetDescription>
+                        Resultados de busqueda de <strong>{product?.name}</strong> puedes ir a las diferentes tiendas dando <strong> clic </strong>
+                        en los logos.
+                    </SheetDescription>
                 </SheetHeader>
                 <div className="px-4">
-                    <ul className="flex flex-col gap-2 text-[19px]">
+                    <ul className="flex flex-row gap-2 text-[19px]">
                         {
                             listProviders.map(list => (
                                 <li key={list.url}>
-                                    <a className="text-blue-400 underline" href={list.url}>Ir a {list.name}</a>
+                                    <a className="text-blue-400 underline" href={list.url}>
+                                        <Image className="h-20 w-20 object-contain" src={list.logo} alt={list.name} width={1000} height={1000}/>
+                                    </a>
                                 </li>
                             ))
                         }
