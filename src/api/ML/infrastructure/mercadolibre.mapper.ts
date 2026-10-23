@@ -1,12 +1,15 @@
 import { ProductScrapp } from "@/interfaces/product-scrapp";
 import { Result } from "./mercadolibre.types";
-import { getProductByID } from "../repositories/product.repository";
+import { ProductDetail } from "./mercadolibre.detail.types";
 
-export async function mapperResultToProductScrapp(results: Result[])
+export function mapperResultToProductScrapp(results: Result[], productsDetails : ProductDetail[]) : ProductScrapp[]
 {
     // TODO: TERMINAR IMPLEMENTACION AUNQUE NO LA APLIQUE
-    for (const result of results) {
-        const productDetail = await getProductByID(result.id);
-        console.log(productDetail);
+    const productDetail : ProductScrapp[] = [];
+
+    for (const pd of productsDetails) {
+        console.log(pd)
     }
+
+    return productDetail;
 }
