@@ -5,6 +5,7 @@ import { MdShopTwo } from "react-icons/md";
 import { Menu } from "@/interfaces/menu";
 import { FaUserLarge } from "react-icons/fa6";
 import { MdOutlineWeb } from "react-icons/md";
+import { GrCatalog } from "react-icons/gr";
 
 export const menu: Menu[] = [
     {
@@ -29,6 +30,11 @@ export const menu: Menu[] = [
         'url': '/admin/purchase-orders',
         'name': 'Registro de compra',
         'icon': MdShopTwo
+    },
+    {
+        'url': '/admin/catalogs',
+        'name': 'Catalogos',
+        'icon': GrCatalog
     }
 ];
 
