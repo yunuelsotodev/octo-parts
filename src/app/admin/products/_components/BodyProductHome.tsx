@@ -119,7 +119,7 @@ export default function BodyProductHome({ models, brands, years, products }: Pro
                     />
                 </div>
                 <ModalAdd
-                    button={<Button className='text-base h-30!'>+ Pieza nueva</Button>}
+                    button={<Button className='text-base'>+ Pieza nueva</Button>}
                     formBody={<BodyFormProduct brands={brands} models={models} years={years} />}
                     title="Agregar producto"
                 />                

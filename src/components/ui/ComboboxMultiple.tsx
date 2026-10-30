@@ -46,7 +46,7 @@ export function ComboboxMultiple({ options, emptyValue = 'Not found item.', plac
                   {value}
                 </ComboboxChip>
               ))}
-              <ComboboxChipsInput placeholder={placeholder} />
+              <ComboboxChipsInput placeholder={placeholder} className='text-base'/>
             </React.Fragment>
           )}
         </ComboboxValue>

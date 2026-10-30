@@ -16,11 +16,10 @@ export default function SearchInput({ placeholder, searchFunction, animate, valu
     const [active, setActive] = useState(false);
 
     return (
-    <Field className={`${active ? 'max-w-sm' : `${animate ? 'w-0' : 'max-w-sm'}`} transition-all duration-500 text-2xl!`}>
+    <Field className={`${active ? 'max-w-sm' : `${animate ? 'w-0' : 'max-w-sm'}`} transition-all duration-500`}>
             <InputGroup>
                 <InputGroupInput
                     value={value}
-                    className='text-2xl!'
                     id="inline-start-input"
                     placeholder={placeholder ?? 'Buscar elemento...'}
                     onFocus={() => setActive(true)}

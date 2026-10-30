@@ -84,14 +84,16 @@ export default function Filters({ years, models, brands, handleFilters, brandsF,
                     <Input
                         type='number'
                         placeholder='Precio mayor a'
-                        onChange={(e) => handleFilters([e.target.value], 'priceL')}
+                        onChange={(e) => handleFilters([e.target.value], 'priceM')}
+                        value={restFilters.find(filter => filter.name === 'priceM')?.value ?? ''}
                     />
                 </Field>
                 <Field>
                     <Input
                         type="number"
                         placeholder='Precio menor a'
-                        onChange={(e) => handleFilters([e.target.value], 'priceM')}
+                        onChange={(e) => handleFilters([e.target.value], 'priceL')}
+                        value={restFilters.find(filter => filter.name === 'priceL')?.value ?? ''}
                     />
                 </Field>
             </div>
@@ -100,14 +102,16 @@ export default function Filters({ years, models, brands, handleFilters, brandsF,
                     <Input
                         type="number"
                         placeholder="Cantidad en stock mayor a"
-                        onChange={(e) => handleFilters([e.target.value], 'stockL')}
+                        onChange={(e) => handleFilters([e.target.value], 'stockM')}
+                        value={restFilters.find(filter => filter.name === 'stockM')?.value ?? ''}
                     />
                 </Field>
                 <Field>
                     <Input
                         type="number"
                         placeholder="Cantidad en stock menor a"
-                        onChange={(e) => handleFilters([e.target.value], 'stockM')}                        
+                        onChange={(e) => handleFilters([e.target.value], 'stockL')}  
+                        value={restFilters.find(filter => filter.name === 'stckL')?.value ?? ''}
                     />
                 </Field>
             </div>
@@ -115,7 +119,7 @@ export default function Filters({ years, models, brands, handleFilters, brandsF,
                 placeholder='Buscar producto'
                 searchFunction={(value) => handleFilters([value], 'search')}
                 animate={false}
-                value={restFilters.find(filter => filter.name === 'search')!.value}
+                value={restFilters.find(filter => filter.name === 'search')?.value ?? ''}
             />
             <Field>
                 <Button type="button" onClick={() => handleFilters([], 'clear')}>
