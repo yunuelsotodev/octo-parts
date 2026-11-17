@@ -39,8 +39,6 @@ export default function Filters({ years, models, brands, handleFilters, brandsF,
         }
     });  
 
-    //TODO: Completar los value de los inputs para que se basen en al resto de estados.
-
     return (
         <div className='flex flex-col gap-4 mb-5 px-2'>
             <div className='flex flex-row gap-2 justify-between'>
@@ -50,7 +48,10 @@ export default function Filters({ years, models, brands, handleFilters, brandsF,
                         emptyValue='No hay marca'
                         placeholder='Por marca'
                         selected={brandsF}
-                        handleChange={handleFilters}
+                        handleChange={(value, name) => {
+                            console.log(value);
+                            handleFilters(value, name)
+                        }}
                         name="brands"
                     />
                 </Field>                                       
@@ -122,7 +123,7 @@ export default function Filters({ years, models, brands, handleFilters, brandsF,
                 value={restFilters.find(filter => filter.name === 'search')?.value ?? ''}
             />
             <Field>
-                <Button type="button" onClick={() => handleFilters([], 'clear')}>
+                <Button type="button" onClick={() => handleFilters([''], 'clear')}>
                     <MdFilterAltOff size={30}/>
                     Eliminar filtros
                 </Button>

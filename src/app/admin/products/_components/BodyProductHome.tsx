@@ -33,19 +33,25 @@ export default function BodyProductHome({ models, brands, years, products }: Pro
     const [yearF, setYearF] = useState<number[]>([]);
     const [restFilters, setRestFilters] = useState<Filters[]>([])    
 
-    const handleFilters = async (value: string[], name: string) => {
-        console.log(name ?? 'EMPTY', value ?? 'EMPTY');
-        
+    const handleFilters = async (value: string[], name: string) => {   
         handleDesition(value, name);
 
-        const minPrice = restFilters.find(filter => filter.name === 'priceM')?.value;
-        const maxPrice = restFilters.find(filter => filter.name === 'priceL')?.value;
+        if (name === 'clear') {
+            handleDesition(value, name);
+            const products = await getProducts();  
+            setProductsState(products);
+            return;
+        }
+        
+        const minPrice = name === 'priceM' ? value[0] : (restFilters.find(f => f.name === 'priceM')?.value);
+        const maxPrice = name === 'priceL' ? value[0] : (restFilters.find(f => f.name === 'priceL')?.value);
+        const search = name === 'search' ? value[0] : (restFilters.find(f => f.name === 'search')?.value ?? '');
 
         const products = await getProducts({
-            search: restFilters.find(filter => filter.name === 'search')?.value ?? '',
-            brands: brandF,
-            models: modelF,
-            years: yearF,
+            search: search,
+            brands: name === 'brands' ? value : brandF,
+            models: name === 'models' ? value : modelF,
+            years: name === 'years' ? value.map(v => Number(v)) : yearF,
             minPrice: minPrice ? Number.parseFloat(minPrice) : undefined,
             maxPrice: maxPrice ? Number.parseFloat(maxPrice) : undefined
         });
@@ -53,30 +59,30 @@ export default function BodyProductHome({ models, brands, years, products }: Pro
         setProductsState(products);
     }
 
-    const handleDesition = (value: string[], name: string) => {
+    const handleDesition = (value: string[], name: string) => {        
         switch (name) {
             case 'brands':
                 setBrandF(value);
-                break;
+                return null;
             case 'models':
                 setModelF(value);
-                break;           
+                return null;           
             case 'years':
                 const array = value.map(v => (
                     Number.parseInt(v)              
                 ));
 
                 setYearF(array)
-                break;
+                return null;
             case 'clear':
                 setYearF([]);
                 setModelF([]);
                 setBrandF([]);
                 setRestFilters([]);
+                return null;
             default:
-
                 setRestFilters([{value: value[0], name: name}])
-                break;
+                return null;
         }     
     }
     
@@ -90,7 +96,7 @@ export default function BodyProductHome({ models, brands, years, products }: Pro
                         button={
                             <button type="button">
                                 {
-                                    brandF.length > 0 || modelF.length > 0 || yearF.length > 0 ? (
+                                    brandF.length > 0 || modelF.length > 0 || yearF.length > 0 || restFilters.length > 0 ? (
                                         <FaFilter size={25} />
                                     ): (
                                         <CiFilter size={35} />

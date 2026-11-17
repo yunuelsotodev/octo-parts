@@ -6,7 +6,12 @@ import { chromium } from "@playwright/test";
 export const navigation = async (name: string, model: string | null = '', brand: string | null = '', year: number | null): Promise<ProductScrapp[]> => {
     const terms = getTerms(name, model, brand, year);
 
-    const amazonProducts = await searchAmazon(terms);
+    let amazonProducts: ProductScrapp[] = [];
+    try {
+        amazonProducts = await searchAmazon(terms);
+    } catch {
+        amazonProducts = [];
+    }
 
     const products: ProductScrapp[] = [
         ...amazonProducts,      
@@ -18,24 +23,26 @@ export const navigation = async (name: string, model: string | null = '', brand:
 async function searchAmazon(terms: (string | undefined)[]): Promise<ProductScrapp[]> {
     const browser = await chromium.launch({ headless: true });
 
-    const page = await browser.newPage();
+    try {
+        const page = await browser.newPage();
 
-    const URL = 'https://www.amazon.com.mx/s?k=' + terms.join('+');
+        const URL = 'https://www.amazon.com.mx/s?k=' + terms.join('+');
 
-    await page.goto(URL);
+        await page.goto(URL);
 
-    const products = await page.$$eval('div[role="listitem"]',
-        (results) => (
-            results.slice(0, 10).map((el) => ({
-                title: el.querySelector('[data-cy="title-recipe"] span')?.textContent ?? '',
-                price: el.querySelector('.a-price-whole')?.textContent ?? null,
-                image: el.querySelector('.s-image')?.getAttribute('src') ?? null,
-                url: 'https://www.amazon.com.mx/' + (el.querySelector('a')?.getAttribute('href') ?? '')
-            }))
-        )
-    );
+        const products = await page.$$eval('div[role="listitem"]',
+            (results) => (
+                results.slice(0, 10).map((el) => ({
+                    title: el.querySelector('[data-cy="title-recipe"] span')?.textContent ?? '',
+                    price: el.querySelector('.a-price-whole')?.textContent ?? null,
+                    image: el.querySelector('.s-image')?.getAttribute('src') ?? null,
+                    url: 'https://www.amazon.com.mx/' + (el.querySelector('a')?.getAttribute('href') ?? '')
+                }))
+            )
+        );
 
-    await browser.close();
-
-    return products;
+        return products;
+    } finally {
+        await browser.close();
+    }
 }

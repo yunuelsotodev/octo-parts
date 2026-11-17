@@ -24,7 +24,9 @@ export default function SearchInput({ placeholder, searchFunction, animate, valu
                     placeholder={placeholder ?? 'Buscar elemento...'}
                     onFocus={() => setActive(true)}
                     onBlur={() => setActive(false)}
-                    onChange={(e) => searchFunction(e.target.value)}
+                    onChange={(e) => {
+                        searchFunction(e.target.value)
+                    }}
                     onKeyDownCapture={(e) => {
                         if (e.key === 'Enter') {
                             setActive(false);

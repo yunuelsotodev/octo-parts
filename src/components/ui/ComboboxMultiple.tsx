@@ -35,7 +35,9 @@ export function ComboboxMultiple({ options, emptyValue = 'Not found item.', plac
       autoHighlight
       defaultValue={[]}    
       value={selected}
-      onValueChange={(e) => handleChange(e, name ?? 'combobox')}
+      onValueChange={(value) => {        
+        handleChange(value, name ?? 'combobox')
+      }}
     >
       <ComboboxChips ref={anchor}>
         <ComboboxValue>
