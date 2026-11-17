@@ -1,7 +1,5 @@
 'use client'
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
 import {
   Menubar,
   MenubarMenu,
@@ -22,21 +20,24 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { IoIosMenu } from "react-icons/io"
 import { animate } from 'animejs';
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 
 export function SheetCustom() {
 
   const allMenu = [...menu, ...adminMenu];
   const path = usePathname();
+
   const menuRes = resolveTitle(path, allMenu);
+
+  const [menuState, setMenuState] = useState(menuRes);
 
   const pillRef = useRef<HTMLDivElement>(null);
   const animRef = useRef<ReturnType<typeof animate> | null>(null);
  
   const lastYRef = useRef<number | null>(null);
-
-  const activePosition = menuRes?.position;
-
+  
+  const activePosition = menuState?.position;
+  
   useEffect(() => {
     if (activePosition == null) return;
     
@@ -79,8 +80,10 @@ export function SheetCustom() {
           />
         </MenubarMenu>
         <MenubarMenu>
-            <span className="text-lg">{menuRes?.name ?? ''}</span>
-          <Image src={'/favicon.ico'} alt="logo de rueda" width={30} height={30} />
+          <span className="text-lg">{menuRes?.name ?? ''}</span>
+          <Link href={'/admin/shell'}>
+            <Image src={'/favicon.ico'} alt="logo de rueda" width={30} height={30} />
+          </Link>
         </MenubarMenu>
       </Menubar>
       <SheetContent side="left">
@@ -93,7 +96,7 @@ export function SheetCustom() {
             {
               menu.map(({ url, name: internalName, icon: Icon }) => {
                 return (
-                  <Link key={url} href={url} className={`z-10 m-2 flex flex-row gap-2 items-center transition-all duration-75 ${internalName === menuRes?.name ? 'scale-[1.05]' : ''}`}>
+                  <Link key={url} href={url} className={`z-10 m-2 flex flex-row gap-2 items-center transition-all duration-75 ${internalName === menuState?.name ? 'scale-[1.05]' : ''}`}>
                     <Icon />
                     <span>{internalName}</span>
                   </Link>

@@ -16,7 +16,7 @@ export const menu: Menu[] = [
     },
     {
         'url': '/admin/shell',
-        'name': 'Venta',
+        'name': 'Ventas',
         'icon': MdProductionQuantityLimits,
         'position': 48,
     },
