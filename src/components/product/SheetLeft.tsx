@@ -111,7 +111,7 @@ export function SheetLeft({ openButton, title, product, description, open = fals
                         {
                             listProviders.map(list => (
                                 <li key={list.url}>
-                                    <a className="text-blue-400 underline" href={list.url}>
+                                    <a className="text-blue-400 underline" href={list.url} target="blank">
                                         <Image className="h-20 w-20 object-contain" src={list.logo} alt={list.name} width={1000} height={1000}/>
                                     </a>
                                 </li>
@@ -146,7 +146,7 @@ export function SheetLeft({ openButton, title, product, description, open = fals
                                                         </picture>                                                
                                                     )
                                                 }                                                
-                                                <a href={productScrapp.url ?? ''} className="text-wrap">
+                                                <a href={productScrapp.url ?? ''} className="text-wrap" target="blank">
                                                     {productScrapp.title?.trim()}
                                                 </a>                                            
                                             </div>
