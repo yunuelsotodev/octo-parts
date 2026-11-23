@@ -1,65 +1,90 @@
 'use server'
 import { prisma } from "@/lib/db";
 import { Image, Prisma, Product } from "../../../generated/prisma/client";
+import { ProductFilters } from "@/interfaces/product-filters";
 
-interface Params {
-    search?: string,
-    models?: string[],
-    brands?: string[],
-    minPrice?: number,
-    maxPrice?: number,
-    years?: number[],
+interface Params extends Partial<ProductFilters> {
     page?: number,
     take?: number,
 }
 
-export const getProducts = async ({ search = '', models = [], brands = [], years = [], minPrice, maxPrice, page = 1, take = 10 }: Params = {}):
-    Promise<Array<Product & { images: Image[] }>> => {
+export const getProducts = async ({
+    search = '',
+    models = [],
+    brands = [],
+    years = [],
+    minPrice,
+    maxPrice,
+    minStock,
+    maxStock,
+    page = 1,
+    take = 10,
+}: Params = {}): Promise<Array<Product & { images: Image[] }>> => {
 
     const where: Prisma.ProductWhereInput = {};
+    const conditions: Prisma.ProductWhereInput[] = [];
 
-    if (search && search.trim() !== '') {
+    if (search.trim() !== '') {
         const searchTerms = search.trim().split(/\s+/).filter(Boolean);
 
-        where.AND = searchTerms.map(term => {
-            let searchYear = Number.parseInt(term);
+        conditions.push({
+            OR: searchTerms.map((term): Prisma.ProductWhereInput => {
+                const searchYear = Number.parseInt(term, 10);
 
-            return {
-                OR: [
-                    { name: { contains: term, mode: 'insensitive' } },
-                    { code: { contains: term, mode: 'insensitive' } },
-                    { description: { contains: term, mode: 'insensitive' } },
-                    { model: { contains: term, mode: 'insensitive' } },
-                    { brand: { not: null, contains: term, mode: 'insensitive' } },
-                    { year: { equals: !Number.isNaN(searchYear) ? searchYear : undefined } },
-                ]
-            };
+                return {
+                    OR: [
+                        { name: { contains: term, mode: 'insensitive' } },
+                        { code: { contains: term, mode: 'insensitive' } },
+                        { description: { contains: term, mode: 'insensitive' } },
+                        { model: { contains: term, mode: 'insensitive' } },
+                        { brand: { not: null, contains: term, mode: 'insensitive' } },
+                        ...(Number.isNaN(searchYear) ? [] : [{ year: { equals: searchYear } }]),
+                    ]
+                };
+            }),
         });
     }
 
     if (years.length > 0) {
-        for (const year of years) {
-            where.year = year;           
-        }        
+        conditions.push({ year: { in: years } });
     }
 
     if (models.length > 0) {
-        for (const model of models) {
-            where.model = { contains: model, mode: 'insensitive' };            
-        }
+        conditions.push({
+            OR: models.map((model): Prisma.ProductWhereInput => ({
+                model: { contains: model, mode: 'insensitive' }
+            })),
+        });
     }
 
     if (brands.length > 0) {
-        for (const brand of brands) {
-            where.brand = { contains: brand, mode: 'insensitive' };            
-        }
+        conditions.push({
+            OR: brands.map((brand): Prisma.ProductWhereInput => ({
+                brand: { contains: brand, mode: 'insensitive' }
+            })),
+        });
     }
 
-    if (minPrice || maxPrice) {
-        where.price = {
-            ...(minPrice ? { gte: minPrice } : {}),
-            ...(maxPrice ? { lte: maxPrice } : {})
-        }
+    if (minPrice !== undefined || maxPrice !== undefined) {
+        conditions.push({
+            price: {
+                ...(minPrice !== undefined ? { gte: minPrice } : {}),
+                ...(maxPrice !== undefined ? { lte: maxPrice } : {}),
+            }
+        });
+    }
+
+    if (minStock !== undefined || maxStock !== undefined) {
+        conditions.push({
+            stock: {
+                ...(minStock !== undefined ? { gte: minStock } : {}),
+                ...(maxStock !== undefined ? { lte: maxStock } : {}),
+            }
+        });
+    }
+
+    if (conditions.length > 0) {
+        where.AND = conditions;
     }
 
     const products = await prisma.product.findMany({

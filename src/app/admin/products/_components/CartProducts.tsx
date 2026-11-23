@@ -1,16 +1,13 @@
 'use client'
 import { Brand, Image as Img, Model, Product } from '../../../../../generated/prisma/client'
-import Image from 'next/image'
-import { formatCurrency } from '@/utils/formart-currecny'
-import { IoIosArrowDown } from 'react-icons/io'
-import { BsCartPlus } from 'react-icons/bs'
-import { FaRegShareFromSquare } from 'react-icons/fa6'
 import { Option } from '@/interfaces/option'
 import { useCallback, useState } from 'react';
 import ProductCart from './ProductCart'
 import { ModalAdd } from '@/components/features/modalAdd'
 import BodyFormProduct from './BodyFormProduct'
 import { SheetLeft } from '@/components/product/SheetLeft'
+import SheetCustom from '@/components/features/SheetCustom';
+import AddProductCart from './AddProductCart';
 
 interface Props {
   products: Array<Product & { images: Img[] }>,
@@ -23,6 +20,7 @@ export default function CartProducts({products, brands, models, years} : Props) 
 
   const [open, setOpen] = useState(false);
   const [openSheet, setOpenSheet] = useState(false);  
+  const [openSheetBottom, setOpenSheetBottom] = useState(false);  
 
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const selected = products.find(p => p.id === selectedId) ?? null;
@@ -41,6 +39,15 @@ export default function CartProducts({products, brands, models, years} : Props) 
     setOpenSheet(true);
   }, []);
 
+  const handleOpenSheetBottom = useCallback((id: string) => {
+    setSelectedId(id);
+    setOpenSheetBottom(true);
+  }, []);
+
+  const handleOpenSheetBottomChange = useCallback((nextOpen: boolean) => {
+    setOpenSheetBottom(nextOpen);
+  }, []);
+
   const handleOpenSheetChange = useCallback((nextOpen: boolean) => {
     setOpenSheet(nextOpen);
   }, []);
@@ -50,7 +57,7 @@ export default function CartProducts({products, brands, models, years} : Props) 
       <div className='flex flex-col gap-2 justify-center items-start'> 
         {
           products.map(product => (
-            <ProductCart product={product} key={product.id} onOpen={handleOpen} onOpenSheet={handleOpenSheet} />
+            <ProductCart product={product} key={product.id} onOpen={handleOpen} onOpenSheet={handleOpenSheet} onOpenSheetBottom={handleOpenSheetBottom} />
           ))
         }
       </div>
@@ -72,8 +79,16 @@ export default function CartProducts({products, brands, models, years} : Props) 
         open={openSheet}
         title="Lista de precios"
         product={selected}
-        key={selectedId ?? 'new'}
         onOpenChange={handleOpenSheetChange}
+      />
+      <SheetCustom
+        title="Selecciona carrito y agrega"
+        side='bottom'
+        body={
+          <AddProductCart key={selectedId ?? 'new'} product={selected} carts={[]}/>
+        }
+        open={openSheetBottom}
+        onOpenChange={handleOpenSheetBottomChange}
       />
     </>
   )

@@ -201,6 +201,7 @@ export default function BodyFormProduct({ models, brands, product, years, onSucc
                   onChange={field.onChange}
                   invalid={fieldState.invalid}
                   functionChange={handleModel}
+                  allowCustomValue
                 />
                 {
                   fieldState.error && (
@@ -224,6 +225,7 @@ export default function BodyFormProduct({ models, brands, product, years, onSucc
                     value={field.value}
                     onChange={field.onChange}
                     invalid={fieldState.invalid}
+                    allowCustomValue
                   />
                   {
                     fieldState.error && (

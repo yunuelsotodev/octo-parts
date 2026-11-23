@@ -39,6 +39,13 @@ export function SheetLeft({ openButton, title, product, description, open = fals
 
     const handleOpenChange = (nextOpen: boolean) => {
         if (!isControlled) setInternalOpen(nextOpen);
+
+        if (nextOpen) {
+            setLoading(true);
+        } else {
+            setLoading(false);
+        }
+
         onOpenChange?.(nextOpen);
     };
 
@@ -63,33 +70,41 @@ export function SheetLeft({ openButton, title, product, description, open = fals
     ];
 
     useEffect(() => {
+        if (!dialogOpen || !product) return;
+
+        let cancelled = false;
+
         const loadProducts = async () => {
             setLoading(true);
 
             const currentDate = new Date();
-            const scrapProducts = await getProductScrap(product!.id);
+            const scrapProducts = await getProductScrap(product.id);
 
-            const searchDate = scrapProducts?.searched_at ? new Date(scrapProducts!.searched_at) : null;
-            let results = null; 
-            
-            if(searchDate)
+            const searchDate = scrapProducts?.searched_at ? new Date(scrapProducts.searched_at) : null;
+            let results: ProductScrapp[] = [];
+
+            if (searchDate)
                 searchDate.setDate(searchDate.getDate() + 2);
 
-            if (!scrapProducts || !searchDate || currentDate > searchDate ) {
-                results = await getScrapedProductsAction(product?.name ?? '', product?.model, product?.brand, product?.year ?? null);   
-                addScrapProduct(results, product!.id);
+            if (!scrapProducts || !searchDate || currentDate > searchDate) {
+                results = await getScrapedProductsAction(product.name ?? '', product.model, product.brand, product.year ?? null);
+                addScrapProduct(results, product.id);
             } else {
                 results = scrapProducts.products;
             }
 
-            setProductsScrapp(results)
-            setLoading(false)
+            if (!cancelled) {
+                setProductsScrapp(results)
+                setLoading(false)
+            }
         }
 
-        if (dialogOpen) {
-            loadProducts()
+        loadProducts()
+
+        return () => {
+            cancelled = true;
         }
-    }, [dialogOpen])
+    }, [dialogOpen, product, getProductScrap, addScrapProduct])
 
     return (
         <Sheet open={dialogOpen} onOpenChange={handleOpenChange}>

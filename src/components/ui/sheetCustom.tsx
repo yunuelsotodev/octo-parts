@@ -24,47 +24,54 @@ import { useEffect, useRef, useState } from "react"
 
 export function SheetCustom() {
 
+  const [open, setOpen] = useState(false);
   const allMenu = [...menu, ...adminMenu];
   const path = usePathname();
-
-  const menuRes = resolveTitle(path, allMenu);
-
-  const [menuState, setMenuState] = useState(menuRes);
 
   const pillRef = useRef<HTMLDivElement>(null);
   const animRef = useRef<ReturnType<typeof animate> | null>(null);
  
-  const lastYRef = useRef<number | null>(null);
+  const lastYRef = useRef<number | null>(null);  
   
+  const menuState = resolveTitle(path, allMenu);
+
   const activePosition = menuState?.position;
   
   useEffect(() => {
-    if (activePosition == null) return;
-    
-    const pill = pillRef.current;
-    
-    if (!pill) {
-      lastYRef.current = activePosition;
-      return;
-    }
+    // Si está cerrado o no hay posición válida, no hacemos nada
+    if (!open || activePosition == null) return;
 
-    animRef.current?.cancel();
-    
-    if (lastYRef.current == null) {
-      animate(pill, { y: activePosition, duration: 0 });
-    } else {
-      animRef.current = animate(pill, { y: activePosition, duration: 450, ease: 'outExpo' });
-    }
-    
-    lastYRef.current = activePosition;
+    // Usamos requestAnimationFrame para esperar a que SheetContent monte el pillRef en el DOM
+    const frameId = requestAnimationFrame(() => {
+      const pill = pillRef.current;
+      if (!pill) return;
+
+      animRef.current?.cancel();
+
+      // Si es la primera vez O si el menú se acaba de abrir y la ruta es la misma que la última vez:
+      // lo colocamos directo sin animación (duration: 0) en donde se había quedado.
+      if (lastYRef.current == null || lastYRef.current === activePosition) {
+        animate(pill, { y: activePosition, duration: 0 });
+      } else {
+        // Si cambió de ruta mientras estaba abierto, animamos hacia la nueva posición
+        animRef.current = animate(pill, {
+          y: activePosition,
+          duration: 450,
+          ease: 'outExpo',
+        });
+      }
+
+      lastYRef.current = activePosition;
+    });
 
     return () => {
+      cancelAnimationFrame(frameId);
       animRef.current?.cancel();
     };
-  }, [activePosition]);
+  }, [activePosition, open]);
 
   return (
-    <Sheet>
+    <Sheet open={open} onOpenChange={setOpen}>
       <Menubar className="w-full rounded-none h-12 justify-between">
         <MenubarMenu>
           <SheetTrigger
@@ -80,7 +87,7 @@ export function SheetCustom() {
           />
         </MenubarMenu>
         <MenubarMenu>
-          <span className="text-lg">{menuRes?.name ?? ''}</span>
+          <span className="text-lg">{menuState?.name ?? ''}</span>
           <Link href={'/admin/shell'}>
             <Image src={'/favicon.ico'} alt="logo de rueda" width={30} height={30} />
           </Link>
@@ -112,7 +119,7 @@ export function SheetCustom() {
           <div className="grid gap-1 text-lg">
             {
               useIsAdmin() && adminMenu.map(({ url, name: internalName, icon: Icon }) => (
-                <Link key={url} href={url} className={`m-2 flex flex-row gap-2 items-center transition-all duration-75 ${internalName === menuRes?.name ? 'scale-[1.05]' : ''}`}>                  
+                <Link key={url} href={url} className={`m-2 flex flex-row gap-2 items-center transition-all duration-75 ${internalName === menuState?.name ? 'scale-[1.05]' : ''}`}>                  
                   <Icon/>
                   <span>{internalName}</span>
                 </Link>

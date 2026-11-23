@@ -10,9 +10,10 @@ interface Props {
     product: Product & { images: Img[] },
     onOpen?: (value: string) => void,
     onOpenSheet?: (value: string) => void,
+    onOpenSheetBottom?: (value: string) => void,
 }
 
-function ProductCart({product, onOpen, onOpenSheet} : Props) {
+function ProductCart({product, onOpen, onOpenSheet, onOpenSheetBottom} : Props) {
     return (
         <div key={product.slug} className='h-auto rounded-2xl shadow-gray-300 shadow-[3px_3px_4px_1px] w-full p-2'>
             {/* <Image className='h-50 w-full object-cover rounded-2xl' src={product.images[0].url} alt={product.slug} height='1000' width='1000' /> */}
@@ -76,7 +77,7 @@ function ProductCart({product, onOpen, onOpenSheet} : Props) {
                     <span className='rounded-full active:bg-blue-300 active:text-amber-50 p-2 transition-all duration-100'>
                         <FaRegShareFromSquare size={25} />
                     </span>
-                    <span className='rounded-full active:bg-blue-300 active:text-amber-50 p-2 transition-all duration-100'>
+                    <span className='rounded-full active:bg-blue-300 active:text-amber-50 p-2 transition-all duration-100' onClick={() => onOpenSheetBottom?.(product.id)}>
                         <BsCartPlus size={25} />
                     </span>
                 </div>

@@ -7,85 +7,49 @@ import BodyFormProduct from "./BodyFormProduct";
 import CartProducts from "./CartProducts";
 import { Brand, Image, Model, Product } from "../../../../../generated/prisma/client";
 import { Option } from "@/interfaces/option";
-import { useState } from "react";
-import { getProducts } from "@/data/products/get-products";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useTransition } from "react";
 import Filters from "@/components/product/Filters";
 import SheetCustom from "@/components/features/SheetCustom";
 import { FaFilter } from "react-icons/fa6";
+import { ProductFilters } from "@/interfaces/product-filters";
+import { buildProductFilterParams, hasActiveFilters, parseProductFiltersFromSearchParams } from "@/utils/product-filters";
 
 interface Props {
     models: Model[]
     brands: Array<Brand & { models: Model[] }>
     years: Option[]
     products: Array<Product & { images: Image[] }>
+    filters: ProductFilters
 }
 
-interface Filters {
-    name: string,
-    value: string
-}
+export default function BodyProductHome({ models, brands, years, products, filters }: Props) {
 
-export default function BodyProductHome({ models, brands, years, products }: Props) {
+    const router = useRouter();
+    const pathname = usePathname();
+    const searchParams = useSearchParams();
+    const [isPending, startTransition] = useTransition();
 
-    const [productsState, setProductsState] = useState<Array<Product & { images: Image[] }>>(products);
-    const [brandF, setBrandF] = useState<string[]>([]);
-    const [modelF, setModelF] = useState<string[]>([]);
-    const [yearF, setYearF] = useState<number[]>([]);
-    const [restFilters, setRestFilters] = useState<Filters[]>([])    
+    const applyFilters = (patch: Partial<ProductFilters>) => {
+        const nextFilters = {
+            ...parseProductFiltersFromSearchParams(searchParams),
+            ...patch,
+        };
 
-    const handleFilters = async (value: string[], name: string) => {   
-        handleDesition(value, name);
+        const params = buildProductFilterParams(nextFilters);
+        const query = params.toString();
 
-        if (name === 'clear') {
-            handleDesition(value, name);
-            const products = await getProducts();  
-            setProductsState(products);
-            return;
-        }
-        
-        const minPrice = name === 'priceM' ? value[0] : (restFilters.find(f => f.name === 'priceM')?.value);
-        const maxPrice = name === 'priceL' ? value[0] : (restFilters.find(f => f.name === 'priceL')?.value);
-        const search = name === 'search' ? value[0] : (restFilters.find(f => f.name === 'search')?.value ?? '');
-
-        const products = await getProducts({
-            search: search,
-            brands: name === 'brands' ? value : brandF,
-            models: name === 'models' ? value : modelF,
-            years: name === 'years' ? value.map(v => Number(v)) : yearF,
-            minPrice: minPrice ? Number.parseFloat(minPrice) : undefined,
-            maxPrice: maxPrice ? Number.parseFloat(maxPrice) : undefined
+        startTransition(() => {
+            router.replace(query ? `${pathname}?${query}` : pathname, { scroll: false });
         });
-         
-        setProductsState(products);
-    }
+    };
 
-    const handleDesition = (value: string[], name: string) => {        
-        switch (name) {
-            case 'brands':
-                setBrandF(value);
-                return null;
-            case 'models':
-                setModelF(value);
-                return null;           
-            case 'years':
-                const array = value.map(v => (
-                    Number.parseInt(v)              
-                ));
+    const clearFilters = () => {
+        startTransition(() => {
+            router.replace(pathname, { scroll: false });
+        });
+    };
 
-                setYearF(array)
-                return null;
-            case 'clear':
-                setYearF([]);
-                setModelF([]);
-                setBrandF([]);
-                setRestFilters([]);
-                return null;
-            default:
-                setRestFilters([{value: value[0], name: name}])
-                return null;
-        }     
-    }
-    
     return (
         <>
             <section className="my-2 mx-2 flex shrink-0 flex-row justify-between items-center gap-2">
@@ -96,7 +60,7 @@ export default function BodyProductHome({ models, brands, years, products }: Pro
                         button={
                             <button type="button">
                                 {
-                                    brandF.length > 0 || modelF.length > 0 || yearF.length > 0 || restFilters.length > 0 ? (
+                                    hasActiveFilters(filters) ? (
                                         <FaFilter size={25} />
                                     ): (
                                         <CiFilter size={35} />
@@ -109,18 +73,16 @@ export default function BodyProductHome({ models, brands, years, products }: Pro
                                 years={years}
                                 models={models}
                                 brands={brands}
-                                handleFilters={handleFilters}
-                                modelsF={modelF}
-                                brandsF={brandF}
-                                yearsF={yearF} 
-                                restFilters={restFilters}
+                                filters={filters}
+                                onFiltersChange={applyFilters}
+                                onClear={clearFilters}
                             />
                         }
-                    />
+                    />                    
                     <SearchInput
                         placeholder="Buscar parte"
-                        searchFunction={(value) => handleFilters([value], 'search')}
-                        value={restFilters.find(filter => filter.name === 'search')?.value ?? ''}
+                        searchFunction={(value) => applyFilters({ search: value })}
+                        value={filters.search}
                         animate={true}
                     />
                 </div>
@@ -130,8 +92,11 @@ export default function BodyProductHome({ models, brands, years, products }: Pro
                     title="Agregar producto"
                 />                
             </section>
-            <section className="overflow-y-scroll flex-1 min-h-0 px-2">
-                <CartProducts products={productsState} brands={brands} models={models} years={years} />
+            <section
+                className={`overflow-y-scroll flex-1 min-h-0 px-2 transition-opacity ${isPending ? 'opacity-60' : 'opacity-100'}`}
+                aria-busy={isPending}
+            >
+                <CartProducts products={products} brands={brands} models={models} years={years} />
                 <br />
                 <br />
                 <br />

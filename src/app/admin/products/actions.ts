@@ -47,7 +47,8 @@ export const createProduct = async (values: ProductSchemaType): Promise<APIRespo
                 });
             });
 
-            revalidatePath('products');
+            revalidatePath('/admin/products');
+            
         } else {
             return {
                 status: 500,
@@ -166,7 +167,7 @@ export const updateProduct = async (values: ProductSchemaType, id: string): Prom
             }
         });
 
-        revalidatePath('products');
+        revalidatePath('/admin/products');
 
 
     } catch (e) {
@@ -207,7 +208,7 @@ export const deleteProduct = async (id: string): Promise<APIResponse> => {
         where: {id}
     });
 
-    revalidatePath('products');
+    revalidatePath('/admin/products');
 
     return {
         status: 200,
